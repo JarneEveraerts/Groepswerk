@@ -1,0 +1,17 @@
+Dit voorbeeldproject wordt op verschillende momenten gebruikt in de cursus.
+
+Je moet je voorstellen dat er ooit eens een verslag is geschreven na een eerste kennismaking en wat gesprekken met de opdrachtgever.
+	01 probleemdomein en initiele gebruikersvereisten
+dit introduceert het probleemdomein (de videotheek) maar bevat natuurlijk niet genoeg details om mee aan de slag te gaan.
+
+Bij het doornemen van dit verslag en tijdens de rest van de analyse (!), had de analist veel vragen over de details van het probleemdomein. Deze vragen en de antwoorden van de opdrachtgever, vind je terug in 
+	02 vraag en antwoord
+	
+Bovenstaande documenten zijn niet handig om mee verder te werken, dus werd de informatie overgenomen en geherstructureerd in de volgende analyse documenten 
+	03a business use case model
+	03b domeinregels
+	03c technische vereisten
+	
+Dit is verre van compleet (bv. het klassenmodel / conceptueel datamodel ontbreekt volledig) en ook nog niet afgewerkt (vandaar de todo's in sommige documenten, dan zie je dat ook eens).
+
+

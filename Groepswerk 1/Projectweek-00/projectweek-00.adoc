@@ -1,0 +1,136 @@
+= Analyse - Projectweek 00
+Yanic Inghelbrecht
+v2021.10.12.10.30
+// toc and section numbering
+:toc: preamble
+:toclevels: 4
+:sectnums: 
+:sectlinks:
+:sectnumlevels: 4
+// source code formatting
+:prewrap!:
+:source-highlighter: rouge
+:source-language: csharp
+:rouge-style: github
+:rouge-css: class
+// inject css for highlights using docinfo
+:docinfodir: ../common
+:docinfo: shared-head
+// folders
+:imagesdir: images
+:url-verdieping: ../{docname}-verdieping/{docname}-verdieping.adoc
+// experimental voor kdb: en btn: macro's van AsciiDoctor
+:experimental:
+
+//preamble
+[.text-right]
+versie {revnumber}
+
+== Indeling in projectgroepen
+
+Deze week worden de groepen gevormd voor het project, elk groepje bestaat uit +- 4 studenten.
+
+De indeling verschijnt op Chamilo zodat je kunt zien in welke projectgroep je zit en wie je groepsgenoten zijn. Normaliter verandert deze indeling niet meer, tenzij je docent dit nodig acht.
+
+Elk groepje krijgt een code die bestaat uit een klascode en een nummer, bv. C3 is groepje 3 uit klas 1C.
+
+Lees in de studiewijzer nog eens na hoe de evaluatie van dit project zal verlopen, jouw eindscore zal immers grotendeels afhankelijk zijn van jullie wekelijkse groepsscore!
+
+
+== Taken
+
+Hieronder staan groepsopdrachten maar ook individuele opdrachten.
+
+Jullie mogen elkaar helpen en elkaar uitleg en hints geven, zolang je maar niet simpelweg elkaars oplossing of bestanden overkopieert natuurlijk.
+
+Zo leer je elkaar gelijk ook eens kennen bij het begin van het project.
+
+De oplossingen voor de individuele opdrachten hou je bij, je zult deze later nog moeten indienen.
+
+
+=== Visual Paradigm downloaden en installeren
+
+Deze week installeren we Visual Paradigm, een tool om diagrammen mee te tekenen. Je kunt dit programma via de link hieronder downloaden (let op : een grote download van 700MB):
+
+- link:https://www.visual-paradigm.com/download/[https://www.visual-paradigm.com/download/, window="_blank"]
+
+Na installatie zul je de licentie moeten invoeren. 
+
+Deze licentie wordt voorzien door Hogent, de licentiesleutel vind je terug in een aankondiging op Chamilo.
+
+[WARNING]
+====
+Let op : als de naam van je installatiebestand de letters "CE" bevat (voor Community Edition) dan heb je de verkeerde versie te pakken.
+
+De versie die je daarnet via de website van Visual Paradigm gedownload hebt, is de juiste (geen "CE" in de naam).
+====
+
+Als je Visual Paradigm geïnstalleerd hebt en opstart, zul je de licentie sleutel moeten kopieren en invoeren.
+
+Je zult ook je naam en emailadres moeten invullen, *dit moet je @hogent.be emailadres zijn!!*
+
+image::visual-paradigm-academic-license.png[visual paradign licentie code invullen]
+
+Klik vervolgens op de "Activate" button.
+
+Tot slot verschijnt er een popup venster waar je een **verificatie code** moet invullen. 
+
+Deze code krijg je per email opgestuurd. Kopieer en plak deze code in de verificatie popup en dan is de installatie compleet (en gelicensieerd).
+
+
+=== Voorbeeldproject videotheek downloaden
+
+Je zult vanaf deze week de documentatie nodig hebben van het "Voorbeeldproject videotheek".
+
+Download de .zip file vanop Chamilo en lees de `LEES ME EERST.txt` file zodat je weet wat de verschillende documenten voorstellen.
+
+
+=== Opdracht 1 (individueel)
+
+Bekijk het use case diagram (UCD) "ondersteunende taken" in het BUCM document van het videotheek voorbeeldproject en probeer dit zo goed mogelijk na te bouwen in Visual Paradigm.
+
+Mocht je ze nodig hebben, de handleiding vind je op
+
+- link:https://www.visual-paradigm.com/support/documents/vpuserguide.jsp[https://www.visual-paradigm.com/support/documents/vpuserguide.jsp, window="_blank"]
+
+De interessante stukken in die handleiding zijn
+
+* Part I. Getting started
+** Sectie "5. User interface"
+** Sectie "6. Working with projects"
+* Part II. UML modeling
+** Sectie "1. Use case diagram"
+
+Bewaar je oplossing, je zult deze later nog moeten indienen.
+
+
+=== Opdracht 2 (in groep)
+
+Open de volgende documenten van het "Voorbeeldproject videotheek" :
+
+- `03a business use case model.pdf`
+- `03b domeinregels.pdf`
+
+Bekijk de business use case met code `BUC_EH` en probeer deze zo goed mogelijk na te bouwen in Asciidoc formaat. 
+
+* Als er iets niet (makkelijk) kan nagebouwd worden, zoek dan een alternatieve manier
+* Onderlijnen in asciidoc levert een niet zo leesbaar resultaat op, kies een andere manier om actors te benadrukken
+
+Bewaar het resultaat in een document `buc-eh.adoc`.
+
+De domeinregels uit die BUC stop je in een Asciidoc document `domeinregels.adoc`.
+
+In het BUC document stop je nu hyperlinks naar dit domeinregels document, telkens er naar een domeinregel wordt verwezen. De links gaan gewoon naar het domeinregels document, je hoeft geen locatie IN dat document op te geven.
+
+Eén iemand uit jullie groep is verantwoordelijk voor het indienen op Chamilo.
+
+Stop alle files in een zip file met naam 'c3 projectweek 00.zip' (waarbij je c3 vervangt door jullie groepscode).
+
+Je zult dit bestand moeten indienen (zie onderaan).
+
+
+== Indienen
+
+Dien de zip file uit opdracht 2 in, op Chamilo in de 'Opdrachten rubriek' bij de opdracht voor projectweek 00.
+
+Uiterste indiendatum is de dag VOOR jullie volgende les : heb je bv. les op woensdag dan moet jullie oplossing ten laatste dinsdag op Chamilo ingediend worden.
