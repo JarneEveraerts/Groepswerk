@@ -16,15 +16,18 @@ geplaatst worden.
 1. De *klant* wil een exemplaar huren
 2. De *klant* geeft het identificatie plaatje van het exemplaar aan de medewerker.
 3. De *medewerker* gaat na dat de klant dit exemplaar mag huren
-volgens DR_VEV
+volgens 
+link:projectweek-00.adoc[DR_VEV]
 4. De *klant* geeft aan hoe lang hij het exemplaar wil houden.
 5. De *medewerker* gaat na dat dit kan gedurende de gevraagde periode
-volgens DR_EVP
+volgens 
+link:projectweek-00.adoc[DR_EVP]
 6. De *medewerker* gaat na dat de dag waarop het exemplaar teruggebracht moet
 worden, geen voorziene sluitingsdag is.
 7. De *medewerker* noteert de verhuring.
 8. De *medewerker* voegt de kost toe aan de lopende rekening van de klant
-volgens DR_KEP
+volgens 
+link:projectweek-00.adoc[DR_KEP]
 9. De use case eindigt
 
 
@@ -33,7 +36,8 @@ Het exemplaar is in het bezit van de klant en de kosten zijn aan de lopende
 rekening van de klant toegevoegd. Het exemplaar moet niet teruggebracht
 worden op een voorziene sluitingsdag.
 
-Merk op dat stap 6 van het basispad nodig is wegens DR_VPS.
+Merk op dat stap 6 van het basispad nodig is wegens 
+link:projectweek-00.adoc[DR_VPS].
 
 
 === Alternatief A : Stoppen
@@ -61,10 +65,10 @@ Merk op dat stap 6 van het basispad nodig is wegens DR_VPS.
 gevraagde periode.
 6. De *medewerker* informeert de klant hierover en vraagt om een kortere periode.
 7. De use case gaat verder in stap 4 van het basispad.
-////
+
 Merk op dat een gelijkwaardig exemplaar zoeken in alternatief C, zinloos zou zijn
-vermits DR_EVD uitgedrukt is in termen van (alle) gelijkwaardige exemplaren. 
-////
+vermits link:projectweek-00.adoc[DR_EVD] uitgedrukt is in termen van (alle) gelijkwaardige exemplaren. 
+
 
 
 === Alternatief D : Exemplaar moet teruggebracht worden op sluitingsdag.
@@ -74,7 +78,7 @@ voorziene sluitingsdag.
 meer op een voorziene sluitingsdag moet teruggebracht worden.
 8. De *medewerker* informeert de klant hierover.
 9. De use case gaat verder met de volgende stap van het basispad.
-////
+
 Merk op dat in alternatief D, het exemplaar sowieso verhuurbaar zal zijn op elke
 voorziene sluitingsdag, er zijn dan immers geen passende reservaties. Het is dus zeker
-dat het exemplaar verhuurbaar zal zijn in de verlengde verhuurperiode. ////
+dat het exemplaar verhuurbaar zal zijn in de verlengde verhuurperiode.
