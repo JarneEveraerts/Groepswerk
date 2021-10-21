@@ -14,4 +14,4 @@ Elke storting wordt gecontroleerd op vreemde objecten.
 == *Domeinregels met betrekking tot opvraging*
 
 === DR_OS - Opvragen saldo
-Een opvraging kan pas gebeuren indien het saldo 
+Een opvraging kan pas gebeuren indien het saldo toerijkbaar is
