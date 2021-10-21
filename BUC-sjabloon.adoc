@@ -1,3 +1,4 @@
+:toc: auto
 == Buc_
 
 === Actors
