@@ -1,12 +1,17 @@
 :toc: auto
 
-= Domeinregels met betrekking tot stortingen
+== *Domeinregels met betrekking tot stortingen*
 
-== DR_SB - Storting is correct
+=== DR_SB - Storting is correct
 De storting is correct indien het geld niet beschadigd is en het de correcte valuta is.
 
-== DR_SVG - Storting vals geld
+=== DR_SVG - Storting vals geld
 Indien er vals geld wordt gestord zal de bank dit in beslag nemen en wordt het biljet gecontroleerd door de nationale bank.
 
-== DR_SC - Stortingscontrole
+=== DR_SC - Stortingscontrole
 Elke storting wordt gecontroleerd op vreemde objecten.
+
+== *Domeinregels met betrekking tot opvraging*
+
+=== DR_OS - Opvragen saldo
+Een opvraging kan pas gebeuren indien het saldo 
