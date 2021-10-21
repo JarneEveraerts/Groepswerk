@@ -1,0 +1,115 @@
+= Analyse - Projectweek 01
+Yanic Inghelbrecht
+v2021.10.18.23.59
+// toc and section numbering
+:toc: preamble
+:toclevels: 4
+:sectnums: 
+:sectlinks:
+:sectnumlevels: 4
+// source code formatting
+:prewrap!:
+:source-highlighter: rouge
+:source-language: csharp
+:rouge-style: github
+:rouge-css: class
+// inject css for highlights using docinfo
+:docinfodir: ../common
+:docinfo: shared-head
+// folders
+:imagesdir: images
+:url-verdieping: ../{docname}-verdieping/{docname}-verdieping.adoc
+// experimental voor kdb: en btn: macro's van AsciiDoctor
+:experimental:
+
+//preamble
+[.text-right]
+versie {revnumber}
+
+== Taken
+
+Hieronder staan groepsopdrachten maar (soms) ook individuele opdrachten. Jullie mogen elkaar helpen en elkaar uitleg en hints geven, zolang je maar niet simpelweg elkaars bestanden overkopieert natuurlijk.
+
+Jullie krijgen vandaag feedback over wat jullie groepje vorige week heeft ingediend.
+
+Deze week beginnen we aan het "Vreemde Service Bank" (VSB) project, jullie gaan hier meerdere weken aan werken.
+
+=== Projectweek folder aanmaken
+
+Maak ergens op je computer een folder `projectweek 01`, waarin jullie de bestanden van jullie oplossing van deze week zullen bewaren.
+
+
+=== Project "Vreemde Service Bank" downloaden
+
+Je zult vanaf deze week de documentatie nodig hebben van het "Vreemde Service Bank" project.
+
+Op het forum "Leerinhouden" staat een post voor dit project. Download daar de documentatie van dit project.
+
+
+=== Opdracht 1 (in groep)
+
+Overloop in groep ZEER AANDACHTIG het document "organisatie project.adoc".
+
+Hierin staat uitgelegd hoe de komende weken zullen verlopen, wat er van jullie verwacht wordt en wat de spelregels zijn van dit groepswerk.
+
+Zorg ervoor dat elk groepslid op de hoogte is!
+
+Jullie zullen moeten beslissen wie deze week de rol van eindverantwoordelijke op zich neemt.
+
+De eindverantwoordelijke zal ook het `verslag groep C06.adoc` document moeten opstellen (waarbij je C06 vervangt door je eigen groep code) in de projectweek folder en invullen voor deze week.
+
+Denk eraan dat je de komende projectweken telkens een sectie moet *toevoegen* aan dit document en eerdere secties altijd in het document blijven staan.
+
+ 
+=== Opdracht 2 (in groep)
+
+Een eerste belangrijke stap is achterhalen wat de belangrijke taken en bedrijfsprocessen zijn in het probleemdomein. Anders gezegd, bepalen wat de business use cases zouden kunnen zijn. 
+
+Lees eerst individueel de beschrijving van het probleemdomein en initiele gebruikersvereisten voor dit "Vreemde Service Bank" project.
+
+Overloop dit document nogmaals in groep en stel een lijst op van de titels van de business use cases die jullie denken nodig te hebben.
+
+Schrijf jullie lijst neer in een asciidoc document genaamd `bucm titels.adoc`. Bewaar dit document in folder `projectweek 01/bucm`.
+
+
+=== Opdracht 3 (in groep)
+
+In dit project zal een business use case "Geld storten" voorkomen. 
+
+Maak een asciidoc bestand `buc-gs.adoc` waarin je deze BUC in detail uitwerkt. Stop dit document in dezelfde folder `bucm` als in opdracht 2.
+
+Doe hetzelfde voor de business use case "Geld afhalen" in een `buc-ga.adoc` document.
+
+Vorige week heb je de BUC "Exemplaar huren" bekeken (in het voorbeeldproject videotheek), het is precies dit soort use case beschrijving die je moet maken.
+
+Maak in de `bucm` folder ook een `domeinregels.adoc` document waarin je de domeinregels schrijft die je nodig hebt bij de use cases. Link vanuit de business use cases naar dit domeinregels document.
+
+ 
+=== Opdracht 4 (in groep)
+
+De beschrijving van het probleemdomein en initiele gebruikersvereisten zijn natuurlijk verre van volledig. Je kunt met deze informatie onmogelijk een software systeem bouwen voor de bank.
+
+Bedenk minstens 10 intelligente vragen over dit probleemdomein die je aan de opdrachtgever zou willen stellen.
+
+Intelligente vragen hebben te maken met het probleemdomein en gaan liefst over een verduidelijking van een bepaald aspect of de scope van het probleemdomein. 
+
+Dus niet "Bent u nog single?" of "Kun je ook een lening afsluiten?".
+
+Stop je lijst met vragen in een asciidoc bestand `vragen voor de opdrachtgever.adoc`
+ 
+== Indienen
+
+De eindverantwoordelijke overloopt met de groep nog eens de inhoud van de volgende files in de projectweek folder :
+
+* `bucm/bucm titels.adoc`
+* `bucm/buc-gs.adoc`
+* `bucm/buc-ga.adoc`
+* `bucm/domeinregels.adoc`
+* `vragen voor de opdrachtgever.adoc`
+* `verslag groep C06.adoc` (waarbij je C06 vervangt door je eigen groep code)
+
+Deze file stop je vervolgens in een zip bestand met naam `groep C06 projectweek 01.zip` (waarbij je C06 vervangt door je eigen groep code).
+
+Deze zip file wordt ingediend op Chamilo, ten laatste de dag VOOR de volgende feedback sessie (de volgende feedbacksessie is normaliter op dezelfde dag volgende week). 
+
+Is jullie volgende feedbacksessie bv. volgende week woensdag, dan moet je oplossing ten laatste volgende week dinsdag op Chamilo ingediend worden.
