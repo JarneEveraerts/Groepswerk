@@ -11,12 +11,13 @@ Klant heeft rekening, bezit over bankkaart en pincode.
 
 === Basis pad
 1. De *Klant* wilt geld afhalen.
-2. De *Klant* kiest in het menu om geld af te halen.
-3. De *klant* geeft het gewenste bedrag in 
-4. De *machine* controleert het saldo.
-5. De *machine* geeft het geld aan de klant.
-6. De *Klant* drukt op stop en neemt zijn kaart terug.
-7. De use case eindigt
+2. De *klant* voert pincode in.
+3. De *Klant* kiest in het menu om geld af te halen.
+4. De *klant* geeft het gewenste bedrag in 
+5. De *machine* controleert het saldo.
+6. De *machine* geeft het geld aan de klant.
+7. De *Klant* drukt op stop en neemt zijn kaart terug.
+8. De use case eindigt
 
 === Postconditie
 De Klant heeft het geld ontvangen en de machine heeft het geld van de rekening gehaald.
@@ -63,14 +64,13 @@ De Klant probeerd geld af te halen aan het loket. Er moet worden nagegaan of het
 *Klant* heeft rekening, bezit over bankkaart en pincode. Loket is open. 
 
 === Basis pad
-1. De *Klant* wilt geld storten.
-2. De *Klant* gaat naar het loket en vraagt om geld te storten.
-3. De *Medewerker* controleerd of het mogelijk is om geld te storten.
-4. De *Klant* geeft het geld.
-5. De *Medewerker* controleerd en telt het geld.
-6. De *Medewerker* start het stortingsproces.
-7. De *Medewerker* geeft een stortingsbewijs aan de *Klant*.
-8. De use case eindigt
+1. De *Klant* wilt geld afhalen.
+2. De *Klant* gaat naar het loket en vraagt om geld af te halen.
+3. De *Medewerker* controleerd of het mogelijk is om geld af te halen.
+4. De *Medewerker* geeft het geld.
+5. De *Medewerker* past het saldo aan.
+6. De *Medewerker* geeft een afhaalbewijs aan de *Klant*.
+7. De use case eindigt.
 
 === Postconditie
 De Klant heeft het geld gestort en ontvangen op zijn rekening.

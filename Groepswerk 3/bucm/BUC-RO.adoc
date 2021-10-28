@@ -12,7 +12,7 @@ ID-Klant,Loket is open.
 1. De *klant* wilt een spaarrekening openen.
 2. De *klant* gaat naar het loket en vraagt voor een spaarrekening te openen.
 3. De *medewerker* vraagt voor identificatie/persoonlijke gegevens.
-4. De *medewerker* controleert de identificatie.
+4. De *medewerker* controleert de identificatie. volgens link:domeinregels.adoc[DR_I]
 5. De *medewerker* start de procedure.
 6. De *klant* stelt zijn kredietvoet in.
 7. De *medewerker* stuurt de aanvraag door naar het hoofdbureau.
