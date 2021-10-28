@@ -2,7 +2,7 @@ BUC-Geld storten
 
 BUC-Geld afhalen
 
-BUC-Rekening aanmaken
+BUC-Rekening openen
 
 BUC-Saldo opvragen
 

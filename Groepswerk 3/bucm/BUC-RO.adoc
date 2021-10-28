@@ -1,0 +1,84 @@
+:toc: auto
+== Buc_ZO
+De *klant* wilt een zichtrekening openen
+=== Actors
+Klant,Medewerker
+
+=== Preconditie
+ID-Klant,Loket is open.
+
+
+=== Basis pad
+1. De *klant* wilt een spaarrekening openen.
+2. De *klant* gaat naar het loket en vraagt voor een spaarrekening te openen.
+3. De *medewerker* vraagt voor identificatie/persoonlijke gegevens.
+4. De *medewerker* controleert de identificatie.
+5. De *medewerker* start de procedure.
+6. De *klant* stelt zijn kredietvoet in.
+7. De *medewerker* stuurt de aanvraag door naar het hoofdbureau.
+8. De use case eindigt
+=== Postconditie
+De klant krijgt een brief met de info en de bankkaart.
+
+=== Alternatief A: Annuleren
+1. De *Klant* kan op elk moment beslissen om te stoppen.
+2. De *medewerker* maakt eventuele wijzigingen ongedaan.
+3. De use case eindigt
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief A: ongeldige ID
+1. De *medewerker* stelt vast dat de ID ongeldig is.
+2. De *medewerker* informeerd de klant.
+3. use case eindigt.
+
+=== Postconditie
+Niks gewijzigd
+
+
+== Buc_SO
+De *klant* wilt een zichtrekening openen
+=== Actors
+Klant,Medewerker
+
+=== Preconditie
+ID-Klant,Referentie-rekening,Loket is open.
+
+
+=== Basis pad
+1. De *klant* wilt een spaarrekening openen.
+2. De *klant* gaat naar het loket en vraagt voor een spaarrekening te openen.
+3. De *medewerker* vraagt voor identificatie/persoonlijke gegevens.
+4. De *medewerker* controleert de identificatie.
+5. De *medewerker* start de procedure.
+6. De *klant* stelt zijn Referentie-rekening in.
+7. De *medewerker* controleerd alle gegevens.
+8. De *medewerker* stuurt de aanvraag door naar het hoofdbureau.
+9. De use case eindigt
+=== Postconditie
+De klant krijgt een brief met de info en de bankkaart.
+
+=== Alternatief A: Annuleren
+1. De *Klant* kan op elk moment beslissen om te stoppen.
+2. De *medewerker* maakt eventuele wijzigingen ongedaan.
+3. De use case eindigt
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief B: ongeldige ID
+1. De *medewerker* stelt vast dat de ID ongeldig is.
+2. De *medewerker* informeerd de klant.
+3. use case eindigt.
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief C: ongeldige ID
+1. De *medewerker* stelt vast dat de referentie-rekening ongeldig is.
+2. De *medewerker* informeerd de klant.
+3. use case eindigt.
+
+=== Postconditie
+Niks gewijzigd
