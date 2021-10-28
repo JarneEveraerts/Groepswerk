@@ -1,0 +1,105 @@
+:toc: auto
+
+== BUC_GA - Geld Afhalen Machine
+De Klant probeerd geld af te halen aan de machine. Er moet worden nagegaan of het mogelijk is en er word geld afgehaald.
+
+=== Actors
+*Klant*, *machine*
+
+=== Preconditie
+Klant heeft rekening, bezit over bankkaart en pincode.
+
+=== Basis pad
+1. De *Klant* wilt geld afhalen.
+2. De *Klant* kiest in het menu om geld af te halen.
+3. De *klant* geeft het gewenste bedrag in 
+4. De *machine* controleert het saldo.
+5. De *machine* geeft het geld aan de klant.
+6. De *Klant* drukt op stop en neemt zijn kaart terug.
+7. De use case eindigt
+
+=== Postconditie
+De Klant heeft het geld ontvangen en de machine heeft het geld van de rekening gehaald.
+
+=== Alternatief A: Annuleren
+1. De *Klant* kan op elk moment beslissen om te stoppen.
+2. De *machine* maakt eventuele wijzigingen ongedaan.
+3. De use case eindigt
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief B: Verkeerde PIN
+1. De *Klant* voert een verkeerde pin in.
+2. De *machine* informeerd de klant over beschikbare pogingen.
+3. De use case eindigd.
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief B.A: Verkeerde PIN
+1. De *Klant* voert een verkeerde pin in.
+2. De *machine* informeerd de klant dat de kaart word ingeslikt.
+3. De use case eindigd.
+
+=== Postconditie
+De machine slikt de kaart in en informeert de bank.
+
+=== Alternatief C: Saldo ontoerijkbaar 
+1. De *machine* merkt op dat het opgegeven bedrag niet overeenkomt met het beschikbare saldo.
+2. De *machine* informeerd de *Klant* over zijn beschikbaar saldo.
+3. De use case gaat verder in stap 3 van het basispad.
+
+
+
+
+== BUC_GS - Geld Afhalen Loket
+De Klant probeerd geld af te halen aan het loket. Er moet worden nagegaan of het mogelijk is en er word geld afgehaald.
+
+=== Actors
+*Klant*, *Medewerker*
+
+=== Preconditie
+*Klant* heeft rekening, bezit over bankkaart en pincode. Loket is open. 
+
+=== Basis pad
+1. De *Klant* wilt geld storten.
+2. De *Klant* gaat naar het loket en vraagt om geld te storten.
+3. De *Medewerker* controleerd of het mogelijk is om geld te storten.
+4. De *Klant* geeft het geld.
+5. De *Medewerker* controleerd en telt het geld.
+6. De *Medewerker* start het stortingsproces.
+7. De *Medewerker* geeft een stortingsbewijs aan de *Klant*.
+8. De use case eindigt
+
+=== Postconditie
+De Klant heeft het geld gestort en ontvangen op zijn rekening.
+
+=== Alternatief A: Annuleren
+1. De *Klant* kan op elk moment beslissen om te stoppen.
+2. De *Medewerker* maakt eventuele wijzigingen ongedaan.
+3. De use case eindigt
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief B: Verkeerde PIN
+1. De *Klant* voert een verkeerde pin in.
+2. De *Medewerker* informeerd de klant over beschikbare pogingen.
+3. De use case eindigd.
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief B.A: Verkeerde PIN
+1. De *Klant* voert een verkeerde pin in.
+2. De *Medewerker* informeerd de klant dat de kaart in beslag word genomen.
+3. De use case eindigd.
+
+=== Postconditie
+De medewerker neemt de kaart in beslag en informeert de bank.
+
+=== Alternatief C: Saldo ontoerijkbaar 
+1. De *Medewerker* merkt op dat het opgegeven bedrag niet overeenkomt met het beschikbare saldo.
+2. De *Medewerker* informeerd de *Klant* over zijn beschikbaar saldo.
+3. De use case gaat verder in stap 3 van het basispad.

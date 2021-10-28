@@ -1,0 +1,18 @@
+:toc: auto
+
+= *Vragen*
+
+
+*V1 :* Kun je uw rekeninguitreksels opvragen?
+
+*V2 :* Kan je een verzekering afsluiten?
+
+*V3 :* Kan je een lening afsluiten?
+
+*V4 :* Kun je een gepersonaliseerde bankkaart aanvragen?
+
+*V5 :* Kunnen er jongerenrekeningen afgesloten worden?
+
+*V6 :* Wat is het maximum aantal biljeten dat de klant kan storten via de automaat?
+
+*V7 :* Hoeveel euro kan er afgehaald worden via de automaat?
