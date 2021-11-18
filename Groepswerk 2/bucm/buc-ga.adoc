@@ -103,3 +103,55 @@ De medewerker neemt de kaart in beslag en informeert de bank.
 1. De *Medewerker* merkt op dat het opgegeven bedrag niet overeenkomt met het beschikbare saldo.
 2. De *Medewerker* informeerd de *Klant* over zijn beschikbaar saldo.
 3. De use case gaat verder in stap 3 van het basispad.
+
+
+== Representatieve scenario’s
+
+=== Geld Afhalen - automaat
+
+==== SC-GA-A001 - Succesvol Geld Afhalen
+
+[underline]#Klant# Maarten Berkhof wenst geld af te halen aan de bankautomaat.
+Maarten steekt zijn bankkaart in de automaat en voert vervolgens zijn pincode in. Hij maakt kenbaar aan de automaat dat hij geld wil afhalen van zijn rekening door in het menu 'Geld opnemen' te kiezen.
+
+De automaat vraagt vervolgens aan Maarten wat het gewenste bedrag is en in welke biljetten hij het bedrag wenst te krijgen. Maarten voert zijn gewenste bedrag van 20 EUR in en duid aan dat hij dit in 2 biljetten van 10 EUR wenst te krijgen. De automaat controleert het saldo van Maarten en gaat na of het bedrag van zijn rekening kan afgehaald worden.
+
+De automaat geeft het bedrag aan Maarten en verlaagd het saldo van zijn rekening met -20 EUR.
+De automaat vraagt aan Maarten of hij een ticket wenst waarop Maarten ja aanduid. De automaat drukt een ticket af en keert terug naar het hoofdmenu. Maarten drukt op stop en de automaat geeft zijn kaart terug.
+
+*De use case eindigt*.
+
+
+==== SC-GA-A002 - Saldo Ontoerijkend
+
+[underline]#Klant# Maarten Berkhof wenst geld af te halen aan de bankautomaat.
+Maarten steekt zijn bankkaart in de automaat en voert vervolgens zijn pincode in. Hij maakt kenbaar aan de automaat dat hij geld wil afhalen van zijn rekening door in het menu 'Geld opnemen' te kiezen.
+
+De automaat vraagt vervolgens aan Maarten wat het gewenste bedrag is en in welke biljetten hij het bedrag wenst te krijgen. Maarten voert zijn gewenste bedrag van 20 EUR in en duid aan dat hij dit in 2 biljetten van 10 EUR wenst te krijgen. De automaat controleert het saldo van Maarten en gaat na of het bedrag van zijn rekening kan afgehaald worden.
+
+De automaat merkt dat Maarten niet genoeg geld heeft op zijn rekening en toont een melding op het scherm om aan Maarten te laten weten dat zijn saldo ontoerijkend is. De automaat keert terug naar het begin menu.
+
+Maarten drukt op stop, de automaat geeft zijn kaart terug en Maarten neemt zijn kaart terug.
+
+*De use case eindigt*.
+
+
+
+=== Geld Afhalen - loket
+
+==== SC-GA-L001 - Succesvol Geld Afhalen
+
+[underline]#Klant# Maarten Berkhof wenst geld af te halen aan het loket. Hij geeft zijn bankkaart en maakt dit kenbaar aan de [underline]#loketmedewerker (LMW)#. De LMW vraagt aan Maarten hoeveel geld hij wenst af te halen. Maarten zegt aan de LMW dat hij 20 EUR wenst in 2 biljetten van 10 EUR.
+
+De LMW gaat na of dit bedrag beschikbaar is op Maarten zijn rekening en gaat achter het geld in de kluis.
+De LMW verminderd Maarten zijn saldo met -20 EURO. De LMW geeft een papier aan Maarten en vraagt hem om zijn handtekening te plaatsen om te bevestigen dat hij het geld ontvangen heeft. Maarten geeft het ondertekende papier terug aan de LMW en Maarten ontvangt zijn geld.
+
+*De use case eindigt*.
+
+==== SC-GA-L002 - Saldo Ontoerijkend
+
+[underline]#Klant# Maarten Berkhof wenst geld af te halen aan het loket. Hij geeft zijn bankkaart en maakt dit kenbaar aan de [underline]#loketmedewerker (LMW)#. De LMW vraagt aan Maarten hoeveel geld hij wenst af te halen. Maarten zegt aan de LMW dat hij 20 EUR wenst in 2 biljetten van 10 EUR.
+
+De LMW gaat na of dit bedrag beschikbaar is op Maarten zijn rekening en merkt op dat hij niet genoeg geld heeft om het gewenste bedrag af te halen. De LMW deelt dit mee aan Maarten en geeft zijn bankkaart terug. Maarten neemt zijn kaart terug en verlaat het loket.
+
+*De use case eindigt*.
