@@ -1,0 +1,21 @@
+---Vragen
+
+V 1: Wat is het maximum aantal biljetten dat de klant kan storten via de automaat?
+
+V 2: Hoeveel euro kan er afgehaald worden via de automaat?
+
+V 3: Moet je geld hebben om een rekening te openen?
+
+V 4: Komen er extra kosten bij het overschrijven naar een andere bank?
+
+V 5 : Wat als de klant wil stoppen en zijn rekeningen wil overdragen?
+
+V 6: Wat zijn de limieten voor betalingsverrichtingen en hoe te verhogen/verlagen?
+
+V 7: Is het mogelijk om meerdere zichtrekeningen te openen?
+
+V 8: Mag je vanuit een andere bank een spaarrekening openen?
+
+V 9: Kunnen mensen uit het buitenland een rekening openen?
+
+V 10: Moet je in het bezit zijn van een zichtrekening alvorens je een spaarrekening opent?
