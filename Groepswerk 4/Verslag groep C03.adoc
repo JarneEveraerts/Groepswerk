@@ -22,3 +22,14 @@ De student heeft de scenario's geschreven
 
 === *Jarne*
 BUC herwerkt
+
+== *01/12/2021*
+=== *Jason*
+De student heeft zijn deel van het project niet ingediend (opdracht 1,4) en heeft dus niets gedaan.
+
+=== *Jonas*
+De student heeft BUC-RO, BUC-GS, BUC-GA herwerkt en BUC-KI toegevoegd (Opdracht 2) en Domain-Sample (opdracht 5) gemaakt.
+Verslag geschreven.
+
+=== *Jarne*
+De student heeft buc-goi getypt.
