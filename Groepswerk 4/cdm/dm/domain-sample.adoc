@@ -1,0 +1,26 @@
+:toc: auto
+
+= Domain Sample
+
+== Klant
+----
+Naam:       Berkhof
+Voornaam:   Maarten
+
+Adres:      Leopoldlaan 125,
+            2000 Antwerpen
+            België
+
+
+Rekeningnummer: BE09 7360 7980 1706
+----
+
+== Co-titularis
+----
+Naam:       Godaert
+Voornaam:   Laura
+
+Adres:      Leopoldlaan 125,
+            2000 Antwerpen
+            België
+----
