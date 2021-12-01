@@ -1,5 +1,5 @@
 :toc: auto
-== Buc_ZO
+== BUC_ZO
 De *klant* wilt een zichtrekening openen
 === Actors
 Klant,Medewerker
@@ -37,7 +37,7 @@ Niks gewijzigd
 Niks gewijzigd
 
 
-== Buc_SO
+== BUC_SO
 De *klant* wilt een zichtrekening openen
 === Actors
 Klant,Medewerker
