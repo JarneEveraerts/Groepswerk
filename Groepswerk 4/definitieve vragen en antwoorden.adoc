@@ -22,7 +22,6 @@ V 10: Moet je in het bezit zijn van een zichtrekening alvorens je een spaarreken
 
 === Antwoorden
 
-
 A 1: Er is geen limiet op het bedrag en/of aantal biljetten dat je kan storten.
 
 A 2: Er is geen bijkomende limiet op afhalingen (er moet natuurlijk genoeg geld op de rekening staan of je kan niet over de kredietlimiet gaan).
