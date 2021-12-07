@@ -82,3 +82,48 @@ Niks gewijzigd
 
 === Postconditie
 Niks gewijzigd
+
+== Representatieve scenario’s
+
+=== Zichtrekening openen zonder co-titularissen
+
+[underline]#klant# Maarten Berkhog wenst een zichtrekening te openen.
+Maarten geeft alle nodige informatie af aan de medewerker zodat ze kunnen beginnen met het maken van een nieuwe zichtrekening. Er wordt aan Maarten gevraagd of iemand anders ook deze rekening kan gebruiken en hij zegt nee.
+
+De medewerker vraagt achter een geldig rekeningnummer dat kan gelinkt worden met de zichtrekening en hij maakt deze aan, vraagt hierbij een bankkaart aan. De medewerker vraagt of hij nog iets kan doen en Maarten zegt nee.
+
+*De use case eindigt.*
+
+=== Zichtrekening openen met 1 co-titularis
+
+[underline]#klant# Maarten Berkhog wenst een zichtrekening te openen.
+Maarten geeft alle nodige informatie af aan de medewerker zodat ze kunnen beginnen met het maken van een nieuwe zichtrekening. De medewerker vraagt of er een co-titularis moet worden toegevoegd en Maarten zegt ja.
+
+De medewerker vraagt de informatie van de titularis. Maarten zegt voor de naam  Godaert, de voornaam Laura en het adres Leopoldlaan 125, 2000 Antwerpen België. De medewerker voegt de  informatie van de titularis in en gaat door met het maken van een nieuwe zichtrekening.
+
+De medewerker vraagt de kaart aan nadat hij een geldig rekeningnummer geeft.
+
+*De use case eindigt.*
+
+=== Spaarrekening openen zonder co-titularis
+
+[underline]#klant# Maarten Berkhog wenst een spaarrekening te openen.
+De medewerker vraagt de rekeningnummer van Maarten om aan de hand daarvan de spaarrekening te openen.
+
+Maarten geeft zijn rekeningnummer BE09 7360 7980 1706 met de bijhorende informatie. De medewerker dan vraagt of er een co-titularis moet worden toegevoegd waarop hij neen antwoord.
+
+De medewerker maakt de spaarrekening aan en vraagt aan Maarten hoeveel hij op zijn spaarrekening wilt zetten. Maarten antwoord hierop € 10000.
+
+*De use case eindigt.*
+
+
+=== Spaarrekening openen met 1 co-titularis
+
+[underline]#klant# Maarten Berkhog wenst een spaarrekening te openen.
+De medewerker vraagt de rekeningnummer van Maarten om aan de hand daarvan de spaarrekening te openen.
+
+Maarten geeft zijn rekeningnummer BE09 7360 7980 1706 met de bijhorende informatie. De medewerker dan vraagt of er een co-titularis moet worden toegevoegd waarop hij ja antwoord, de medewerker vraagt dan de gegevens van de co-titularis. Maarten geeft de naam en voornaam zowel als het adres.
+
+De medewerker maakt de spaarrekening aan en vraagt aan Maarten hoeveel hij op zijn spaarrekening wilt zetten. Maarten antwoord hierop € 10000.
+
+*De use case eindigt.*
