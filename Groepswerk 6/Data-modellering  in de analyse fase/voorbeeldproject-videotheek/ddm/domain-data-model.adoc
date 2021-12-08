@@ -1,0 +1,153 @@
+= Domain Data Model (DDM)
+Yanic Inghelbrecht
+v2021.12.03.23.59
+// toc and section numbering
+:toc: preamble
+:toclevels: 4
+// geen auto section numbering voor oefeningen (handigere titels en toc)
+//:sectnums:  
+:sectlinks:
+:sectnumlevels: 4
+// source code formatting
+:prewrap!:
+:source-highlighter: rouge
+:source-language: csharp
+:rouge-style: github
+:rouge-css: class
+// inject css for highlights using docinfo
+:docinfodir: ../common
+:docinfo: shared-head
+// folders
+:imagesdir: images
+// experimental voor kdb: en btn: macro's van AsciiDoctor
+:experimental:
+
+//preamble
+[.text-right]
+versie {revnumber}
+
+== Introductie
+
+Dit data model beschrijft de structuur van de gegevens uit het probleemdomein, los van enige (databank) technologie.
+
+We bouwen een **Entity-Relationship Model (ERM)**, dit is een beschrijving van de data in de vorm van entiteitsklassen, hun attributen, de onderlinge relaties tussen deze entiteitsklassen en eventuele constraints.
+
+We kunnen een overzicht geven van dit ERM met één of meerdere Entity-Relationship Diagams (ERD), zoals dit :
+
+image:erd-overzicht.png[een overzicht van het model]
+
+== Gedetailleerde beschrijving
+
+=== Afspraken vooraf
+
+Om het ERM wat efficiënter te noteren, spreken het volgende af :
+
+* elk attribuut is verplicht tenzij er expliciet "optioneel" bij staat
+* elk attribuut laat dubbels toe, tenzij er expliciet "uniek" bij staat
+* een rol wordt enkel getoond indien zij verschilt van de naam van de entiteitsklasse
+** Bv. indien de rol van "Klant" in een relatie gewoon "klant" is dan vermelden we die rol niet
+** Bv. indien de rol van "Klant" in een relatie "huurder" is, dan vermelden we die rol wel bij die relatie
+
+=== Entiteitsklasse : Klant
+
+Een persoon die als lid van de videotheek geregistreerd werd.
+
+==== Attributen
+
+* voornaam : Tekst
+** de voornaam van deze klant
+* lidnummer : Numeriek, uniek
+** 	het lidnummer van deze klant
+* geboortedatum : Datum
+**	de geboortedatum van deze klant
+
+Constraints :
+
+*  `lengte voornaam > 0`
+* `lidnummer >= 0`
+
+=== Entiteitsklasse : Exemplaar
+
+Een item dat ter verhuring kan aangeboden worden.
+
+==== Attributen
+
+* nummer : Numeriek, uniek
+** het nummer op het id-plaatje van dit exemplaar
+* titel : Tekst
+** de titel van dit exemplaar
+* medium : Keuze (dvd/vhs/cd)
+** het medium waarop dit exemplaar wordt aangeboden (bv. DVD, VHS, CD)
+* categorie : Keuze (kinderfilm/film/spel)
+* isNieuw : JaNee
+** is dit een nieuw exemplaar volgens de prijsstrategie?
+* isVolwassenen : JaNee
+** is dit een exemplaar uitsluitend voor volwassenen bestemd?
+
+Constraints :
+
+* `nummer >= 0`
+* `lengte titel > 0`
+* indien `isVolwassenen == ja`, dan moet `categorie <> kinderfilm` zijn
+
+=== Entiteitsklasse : Reservatie
+
+Een reservatie om een item op een specifieke dag te huren
+
+==== Attributen
+
+* titel : Tekst
+** de titel van het item dat gereserveerd moet worden
+* medium : Keuze (dvd/vhs/cd)
+** het medium waarop de klant dit item wenst
+* datum : Datum
+** de datum waarop de klant het item zal komen afhalen
+
+Constraints :
+
+* `lengte titel > 0`
+
+
+=== Relatie : Reservatie - Klant (N-1)
+
+De klant reserveert een item.
+
+* Elke klant heeft minstens 0 reservaties maar kan er meerdere hebben
+* Elke reservatie gebeurt door exact 1 klant
+
+
+=== Entiteitsklasse : Verhuring
+
+De verhuring van 1 specifiek exemplaar aan een klant gedurende een periode.
+
+==== Attributen
+
+* beginDatum : Datum
+** de datum waarop de klant het exemplaar meeneemt
+* eindDatum : Datum
+** de datum waarop de klant het exemplaar ten laatste moet terugbrengen
+* isTerug : JaNee
+** is het exemplaar weer in het bezit van de videotheek?
+* terugDatum : Datum, optioneel (ingevuld indien teruggebracht)
+** de datum waarop het exemplaar werd teruggebracht
+
+Constraints :
+ 
+* `beginDatum < eindDatum`
+* `beginDatum < terugDatum`
+* indien `terugDatum` is ingevuld, dan moet `isTerug == ja` en omgekeerd
+
+=== Relatie : Klant - Verhuring (1-N)
+
+De klant voor wie we de verhuring maken is de huurder van het exemplaar.
+
+* Elke klant (rol : huurder) heeft minstens 0 verhuringen maar kan er meerdere hebben.
+* Elke verhuring gebeurt door exact 1 klant
+
+
+=== Relatie : Exemplaar - Verhuring (1-N)
+
+Het exemplaar dat verhuurd werd.
+
+* Elk exemplaar heeft minstens 0 verhuringen maar kan er meerdere hebben.
+* Elke verhuring betreft exact 1 exemplaar.

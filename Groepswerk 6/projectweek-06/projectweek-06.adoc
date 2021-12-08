@@ -1,0 +1,251 @@
+= Analyse - Projectweek 06
+Yanic Inghelbrecht
+v2021.12.06.23.59
+// toc and section numbering
+:toc: preamble
+:toclevels: 4
+:sectnums: 
+:sectlinks:
+:sectnumlevels: 4
+// source code formatting
+:prewrap!:
+:source-highlighter: rouge
+:source-language: csharp
+:rouge-style: github
+:rouge-css: class
+// inject css for highlights using docinfo
+:docinfodir: ../common
+:docinfo: shared-head
+// folders
+:imagesdir: images
+:url-verdieping: ../{docname}-verdieping/{docname}-verdieping.adoc
+// experimental voor kdb: en btn: macro's van AsciiDoctor
+:experimental:
+
+//preamble
+[.text-right]
+versie {revnumber}
+
+
+== Conceptueel Data Model -> Domain Data Model (enkel nodig voor schooljaar 21-22)
+
+Wat we vorige week een "conceptueel data model" noemden, gaan we vanaf nu een "domain data model" noemen.
+
+Dit om verwarring te vermijden met het vak databanken waar "conceptueel data model" ook aan bod komt maar iets anders betekent.
+
+Je zult dus in je oplossing een folder moeten hernoemen t.o.v. vorige keer :
+
+* folder `cdm` hernoemen naar folder `ddm`
+
+
+
+== Taken
+
+Hieronder staan groepsopdrachten en evt. ook individuele opdrachten. Jullie mogen elkaar helpen en elkaar uitleg en hints geven, zolang je maar niet simpelweg elkaars bestanden overkopieert natuurlijk.
+
+Deze week doen we verder aan het "Vreemde Service Bank" (VSB) project, jullie gaan hier meerdere weken aan werken.
+
+[TIP]
+====
+Zorg dat je nauwgezet alle instructies volgt, ook dat maakt deel uit van jullie evaluatie.
+====
+
+=== De juiste folderstructuur voor het vervolg van het groepswerk
+
+De instructies hieronder zijn enkel bedoeld voor de groepsopdrachten, de oplossingen van de individuele opdrachten bewaar je ergens anders op je schijf!
+
+Voeg een nieuwe folder `projectweek-06` toe aan je `project-vsb` folder, daarin komen de bestanden voor deze week terecht.
+
+Het startpunt voor deze week is jullie oplossing van vorige week, dus deze kun je alvast overnemen.
+
+
+=== Werkverdeling
+
+Jullie groepje moet voor de **volgende projectweek** een eindverantwoordelijke aanduiden, doe dit nu. 
+
+Voor **deze projectweek** hadden jullie vorige keer al een eindverantwoordelijke aangeduid, toch? ;)
+
+
+=== Feedback op het ingediende groepswerk van vorige week
+
+De docent komt deze week in jullie groep langs om feedback te geven op het groepswerk van vorige week. 
+
+**Iedereen moet aanwezig zijn tijdens deze feedback.** Dus zowel het groepje dat de besproken oplossing vorige week indiende alsook het groepje dat deze week met deze oplossing aan de slag moet.
+
+Je zult bij het verder uitwerken van het project, rekening moeten houden met de feedback die je kreeg. Denk eraan, als analist moet je duidelijk communiceren, open kwesties goed opvolgen en nauwkeurig omgaan met informatie. 
+
+Als je meermaals dezelfde fouten maakt omdat je de feedback niet goed hebt aangewend, dan loopt er jullie groep iets mis qua communicatie.
+
+De verantwoordelijke van vorige week (die de oplossing heeft ingediend) moet de feedback noteren en doorspelen aan de verantwoordelijk van deze week.
+
+De verantwoordelijke van deze week (die met de ingediende oplossing aan de slag moet) moet zelf ook feedback noteren zodat jullie groepje er straks mee aan de slag kan.
+
+Elke verantwoordelijke stopt z'n feedback in een document met naam `feedback over pw05 groep c06.adoc`, waarbij je c06 vervangt door je eigen groepscode.
+
+Deze beide verantwoordelijken wisselen hun feedback uit op het einde van de feedbacksessie, dan is de kans groter dat er niks werd vergeten.
+
+De verantwoordelijken spelen de feedback door aan alle andere groepsleden zodat zij erop kunnen terugvallen bij hun deel van het werk.
+
+**Deze beide feedback documenten worden mee ingediend!**
+
+
+=== Opdracht 1 (in groep)
+
+Deze week worden de BUCs HERWERKT (**incl. scenario's en domeinregels**) op basis van de feedback die je kreeg.
+
+We bespreken deze keer de volgende taken :
+
+* Rekening Openen (met scenario's)
+** vooral het stuk rond de co-titularissen identificeren
+* Geld overschrijven Intern (nog geen scenario's)
+* Klant Registreren (nog geen scenario's)
+
+Denk eraan dat je de overige use cases misschien ook zult moeten aanpassen, soms is een deel van de feedback ook van toepassing op use cases die niet werden besproken!
+
+=== Opdracht 2 (in groep)
+
+Voeg in jullie BUCM de nodige representatieve scenario's toe voor taak
+
+* Geld Overschrijven Intern
+
+Deze scenario's zullen dus in document `bucm/buc-goi.adoc` terechtkomen.
+
+
+=== Opdracht 3 (in groep)
+
+Herwerk jullie domain data model (DDM) op basis van de feedback die je kreeg.
+
+Vorige week hebben jullie je DDM gebasseerd op :
+
+* Klant identificeren
+* Zichtrekening openen
+* Geld afhalen
+
+Deze week voegen we daar deze taken aan toe :
+
+* Spaarrekening openen
+* Geld Overschrijven Intern
+
+Jullie domain data model zal dan alle gegevens kunnen beschrijven die nodig zijn bij deze 5 taken.
+
+Je zult hiervoor het document `ddm/erm.adoc` moeten bewerken.
+
+Kijk dus naar de representatieve scenario's van de overeenkomstige BUC's en de data in jullie __domain sample__. Jullie domain data model moet immers ook deze data kunnen beschrijven!
+
+Beperk je tot de data die nodig is bij de vijf gevraagde taken. Bijvoorbeeld, in BUC-KR wordt o.a. de postcode geregistreerd maar omdat die taak voorlopig niet gevraagd is zal je domain data model voorlopig niets over postcodes vertellen.
+
+
+=== Opdracht 4 (in groep)
+
+Teken een ERD met het tool dat jullie in de cursus Databanken gebruiken (Oracle designer?).
+
+Exporteer dit diagram naar een `.png` afbeelding die met een gewone __image viewer__ kan bekeken worden.
+
+Noem deze afbeelding `erd-overzicht.png` en plaats ze in de `/ddm` folder.
+
+
+=== Opdracht 5 (individueel)
+
+Teken het onderstaande ERD na in Visual Paradigm en bewaar het project, je zult dit later nog moeten indienen.
+
+image:erd-voorbeeld.png[ERD voorbeeld]
+
+**Je dient je oplossing NIET in met je groep, het immers een individuele opdracht!**
+
+Eenmaal je in Visual Paradigm een nieuw ERD aangemaakt hebt (en nog voordat je er iets op zet), doe eerst dit :
+
+. rechtsklik op de achtergrond
+. kies 'Open Specification..'
+
+De volgende popup verschijnt dan :
+
+image:vp-logical-data-model.png[visual paradigm logical data model]
+
+Kies bij `Data model :` voor de optie `Logical` (zie rode annotatie) en klik op btn:[OK]. Alhoewel we geen ERD voor een __logisch__ data model willen tekenen, zorgt deze instelling ervoor dat het diagram er geschikt uitziet voor ons __domain__ data model.
+
+De ERD notatie kennen jullie al, en hoe Visual Paradigm in het algemeen werkt kwam aan bod bij het natekenen van het use case diagram.
+
+Denk eraan, je kunt op vrijwel elk visueel element rechtsklikken en via de popup zaken veranderen (desnoods zeer gedetailleerd via 'Open specification..'). 
+
+**Het is aan jullie om hiermee te experimenteren.** Er is geen apart cursusmateriaal voor dit stuk, maar je mag natuurlijk wel hulp inroepen van je medestudenten zolang je maar geen oplossingen met elkaar deelt. 
+
+Een nuttige resource van Visual Paradigm zelf :
+
+* link:https://www.visual-paradigm.com/support/documents/vpuserguide/3563/3564/85375_drawingentit.html[hoe teken je een ERD met Visual Paradigm,window="_blank"]
+
+Let op : bovenstaande pagina alsook de user interface van Visual Paradigm, hanteren een zeer databank-centrische kijk op ERD's. Je zult bv. zien dat er over 'Columns' (kolommen) gesproken wordt i.p.v. attributen, wat wel verwarrend kan zijn. Je ziet in de UI ook af en toe iets staan over primary keys of indices, dit gebruiken we gewoon niet.
+
+****
+Als terzijde, op onderstaande pagina vind je een mooi voorbeeld van het verschil tussen conceptual/logical/physical data model :
+
+* link:https://www.visual-paradigm.com/support/documents/vpuserguide/3563/3564/85378_conceptual,l.html[conceptueel / logisch / fysiek data model,window="_blank"]
+
+Let op : bijna niets daarvan is relevant voor ons "domain data model"! Maar het is wel relevant voor jullie cursus databanken natuurlijk.
+****
+
+Bewaar tussendoor je werk in Visual Paradigm, het programma durft wel eens te crashen. 
+
+**Je zult later een `.png` afbeelding van je ERD moeten indienen**, hieronder staan alvast de instructies (indienen is nu nog niet aan de orde).
+
+Je zult je ERD vanuit Visual Paradigm moeten exporteren naar een afbeelding met naam `erd-voorbeeld-individueel.png`.
+
+[WARNING]
+====
+Let op : ik wil *_geen_* Visual Paradigm files ontvangen!
+====
+
+Om een PNG afbeelding van je diagram te bekomen :
+
+. rechtsklik ergens op de achtergrond van je diagram
+. kies Export | Export as Image...
+. in de dialog die verschijnt stel je "Export Type" in op "png with background" en 96 DPI.
+** denk eraan ook de gevraagde bestandsnaam in te vullen!
+
+image:vp-export-diagram-as-image.png[visual paradigm export diagram as image]
+
+Kijk goed waar je het bestand bewaart zodat je het later nog terugvindt!
+
+
+=== Verslag
+
+De eindverantwoordelijke zal weerom het `verslag groep c06.adoc` document moeten opstellen en invullen voor deze week. Denk eraan dat je voor deze week een sectie moet *toevoegen* en de secties van de vorige weken in het document blijven staan.
+
+De ganse groep zal ook samen de finale versie overlopen van alle documenten alvorens ze in te dienen.
+
+Het verslag van de andere groep dien je niet mee in en je combineert ze ook niet samen in hetzelfde verslag!
+
+
+== Indienen
+
+De eindverantwoordelijke overloopt met de groep nog eens de inhoud van de volgende files in de projectweek folder :
+
+* `feedback over pw05 groep c05.adoc` (feedback document van de ene groep)
+* `feedback over pw05 groep c06.adoc` (feedback document van de andere groep)
+* `verslag groep c06.adoc` (waarbij je c06 vervangt door je eigen groep code)
+* `definitieve vragen en antwoorden.adoc`
+* `ddm/domain-sample.adoc`
+* `ddm/erm.adoc` (herwerkt)
+* `ddm/erd-overzicht.png` (nieuw)
+* `bucm/buc-ki.adoc`
+* `bucm/buc-kr.adoc`
+* `bucm/buc-goi.adoc` 
+* `bucm/buc-gs.adoc` 
+* `bucm/buc-ga.adoc` 
+* `bucm/buc-zo.adoc` + `bucm/buc-so.adoc` of `bucm/buc-ro.adoc`
+* `bucm/domeinregels.adoc`
+
+Deze file stop je vervolgens in een zip bestand met naam `groep c06 projectweek-06.zip` (waarbij je c06 vervangt door je eigen groep code).
+
+
+[IMPORTANT]
+====
+Als ik jullie zip file opendoe, wil ik enkel de `projectweek-06` folder zien, geen andere files!
+
+Die andere files zitten immers *_in_* die `projectweek-06` folder in je zip file.
+
+Ik wil ook geen `__MACOSX` of `.DS_Store` drolletjes tegenkomen in de zip file.
+====
+
+Deze zip file wordt ingediend op Chamilo, ten laatste de dag VOOR de volgende feedback sessie (de volgende feedbacksessie is normaliter op dezelfde dag volgende week). 
+
+Is jullie volgende feedbacksessie bv. volgende week woensdag, dan moet je oplossing ten laatste volgende week dinsdag op Chamilo ingediend worden.

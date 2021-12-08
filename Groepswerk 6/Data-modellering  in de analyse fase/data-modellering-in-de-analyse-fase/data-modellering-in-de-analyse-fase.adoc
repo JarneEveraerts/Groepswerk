@@ -1,0 +1,365 @@
+= Data modellering in de analyse fase
+Yanic Inghelbrecht
+v2021.12.03.23.59
+// toc and section numbering
+:toc: preamble
+:toclevels: 4
+// geen auto section numbering voor oefeningen (handigere titels en toc)
+//:sectnums:  
+:sectlinks:
+:sectnumlevels: 4
+// source code formatting
+:prewrap!:
+:source-highlighter: rouge
+:source-language: csharp
+:rouge-style: github
+:rouge-css: class
+// inject css for highlights using docinfo
+:docinfodir: ../common
+:docinfo: shared-head
+// folders
+:imagesdir: images
+// experimental voor kdb: en btn: macro's van AsciiDoctor
+:experimental:
+
+//preamble
+[.text-right]
+versie {revnumber}
+
+== Introductie
+
+In een **software ontwikkelingsproject** bouwen we een systeem dat moet voldoen aan de vereisten van de opdrachtgever.
+
+Tijdens de **analyse fase** van het software ontwikkelingsproces *onderzoeken* we het probleemdomein en *documenteren* dit zo nauwkeurig mogelijk.
+
+Het *probleemdomein* is gewoon de context waarin het project zich situeert, bv. de concrete bank waar het project om gaat. Alle banken doen min of meer hetzelfde, maar ze verschillen in de details. Wij moeten documenteren hoe er precies gewerkt wordt bij die ene bank voor wie we het project maken.
+
+[IMPORTANT]
+====
+De documentatie die we in de analyse fase produceren is zeer belangrijk bij het bouwen van het systeem, onze oplossing moet immers perfect passen bij het probleemdomein!
+====
+
+Er bestaan verschillende **software ontwikkelingsprocessen**, ze verschillen o.a. in het soort documenten dat geproduceerd wordt.
+
+In deze cursus kozen we om het probleemdomein te beschrijven met :
+
+* een **business use case model** (BUCM)
+** dit beschrijft de functionele vereisten.
+*** dit zijn de **processen, taken, activiteiten, ...** die uitgevoerd worden in het probleemdomein.
+** elke taak wordt beschreven door een use case, i.e. **een stappenplan met mogelijke afwijkingen**.
+*** bv. "BUC-EH : Exemplaar huren" beschrijft alle mogelijke handelingen die relevant zijn bij het bedrijfproces om een exemplaar te verhuren aan een klant.
+** elke use case krijgt ook een beschrijving van **representatieve scenario's**, eentje per **uniek pad door de use case**.
+*** een representatief scenario vermeldt de nodige **voorbeelddata en welk pad** precies gevolgd wordt.
+* een **lijst domeinregels**
+** deze beschrijven *beperkingen* die respecteert moeten worden, **verplichte handelingen** in sommige situaties, of **hoe informatie afgeleid wordt** uit andere gegevens.
+*** bv. een volwassenen film kan enkel door meerderjarigen gehuurd worden.
+*** bv. als een film met een klacht wordt teruggebracht, wordt de klacht eerst gecontroleerd alvorens de film verhuurbaar te stellen.
+*** bv. een film is verhuurbaar gedurende een periode indien hij elke dag in die periode verhuurbaar is.
+* een **domain data model** (DDM)
+** dit beschrijft de gegevens die in het probleemdomein gebruikt worden.
+*** welke data houdt men bij voor later, welke gegevens wisselt men uit, welke informatie controleert men, ...
+*** bv. per reservatie noteert de medewerker de titel, medium en datum alsook welke klant de reservatie maakt.
+*** bv. een klant kan meerdere verhuringen op eenzelfde dag hebben.
+** welke gegevens dit zijn vinden we o.a. terug in de voorbeelddata uit de representatieve scenario's.
+** herbruikbare voorbeelddata die in meerdere scenario's van pas kan komen, splitsen we af in een **domain sample**.
+
+De topics 'business use case model' en domeinregels werden eerder al uitgelegd, hieronder bespreken we het domain data model.
+
+== Domain Data Model (DDM)
+
+Een **data model** (in het algemeen) is een beschrijving van gegevens, die vastlegt **wat de structuur van deze data is** : 
+
+* uit welke stukjes bestaat de data
+* hoe zijn die stukjes aan elkaar gerelateerd
+
+Het **domain data model** is een data model dat het **probleemdomein** beschrijft. Het beschrijft de structuur van de gegevens uit het probleemdomein, **los van enige (databank) technologie**.
+
+[CAUTION]
+====
+Normaliter zouden we de term **conceptueel data model** gebruiken voor het data model in de analyse fase. Helaas betekent deze term in databank-kringen iets heel anders, dus om jullie niet te verwarren zullen we het in deze cursus een **domain data model** noemen.
+====
+
+Als we in een probleemdomein informatie over klanten moeten bijhouden, dan zal er een domain data model zijn dat vastlegt welke informatie we per klant gaan bijhouden. We houden bijvoorbeeld wél de kenmerken 'voornaam', 'familienaam' en 'geboortedatum' bij maar niet de kenmerken 'haarkleur' of 'schoenmaat'.
+
+Bij elk kenmerk beschrijven we wat voor soort data het is (bv. een tekst, een getal, een datum, ...) en aan welke extra voorwaarden het moet voldoen (bv. voornaam mag niet leeg zijn, aantal kinderen kan niet negatief zijn, reservatiedatum mag geen maandag zijn, ...). Die extra voorwaarden noemt men __**constraints**__.
+
+
+In een software ontwikkelingsproject worden trouwens meerdere soorten data modellen gebruikt. Bijvoorbeeld, een databank definitie in een SQL-DBMS (welke tabellen zijn er, wat zijn de foreign keys, etc) is ook een soort data model. In databank-kringen noemt men dit dan een **_fysiek_ datamodel**, omdat het fysiek aanwezig is in een DBMS - in zoverre je bits & bytes "fysiek" kunt noemen :)
+
+We zullen dit domain data model beschrijven als een Entity Relationship Model (ERM).
+
+=== Twee soorten data modellen
+
+Een data model beschrijft dus gegevens, maar de vraag is : hoe moet zo'n beschrijving eruitzien?
+
+In deze opleiding komen alleszins al twee verschillende soorten beschrijvingen aan bod :
+
+* een beschrijving via een **relationeel data model**, bv. om een **SQL-databank** te beschrijven.
+** gebaseerd op tabellen, kolommen, rijen, primay keys, foreign keys, ...
+** beperkte mogelijkheden, bv. veel-op-veel relaties en super/subtypes kunnen niet rechtstreeks voorgesteld worden.
+** wordt vooral gebruikt om de data te beschrijven in onze oplossing (ontwerp en implementatie fasen)
+* een beschrijving via een **Entity Relationship Model (ERM)**, bv. om een domain data model te beschrijven.
+** gebaseerd op entiteitsklassen, attributen, relaties, super- en subtypes, ...
+** krachtige mogelijkheden, bv. veel-op-veel relaties en super/subtypes kunnen wel rechtstreeks voorgesteld worden.
+** wordt o.a. gebruikt om de data te beschrijven uit het probleemdomein (analyse fase).
+
+Dit zijn twee __**soorten**__ data modellen die we kunnen gebruiken om onze data te beschrijven.
+
+Voor het probleemdomein gebruiken we een beschrijving gebaseerd op Entiteitsklassen en Relaties (dus ERM).
+
+Bij het bouwen van de oplossing (i.e. het systeem) is de keuze technologie-afhankelijk : als onze oplossing een SQL-DBMS gebruikt, dan kiezen we voor een relationele beschrijving.
+
+=== Entity Relationship Model (ERM)
+
+Voor ons domain data model kiezen we een ERM-beschrijving, de krachtigere mogelijkheden komen goed van pas in de analyse fase.
+
+**Een ERM wordt in een tekstdocument beschreven, het is gewoon een tekst die de onderdelen van het model oplijst en beschrijft.** 
+
+Hier vind je link:../voorbeeldproject-videotheek/ddm/domain-data-model.adoc[een voorbeeld van een ERM]. Vergewis je ervan dat dit document entiteitsklassen, attributen en relaties beschrijft en bekijk ook het diagram.
+
+Om een overzicht te geven van het model worden vaak één of meerdere diagrammen getekend, meestal zijn dit Entity Relationship Diagrams (ERD).
+
+**Let op : een ERD is geen model ! ! !** Het is een visuele weergave van een kleine stukje van een model, niet het model zelf.
+
+[CAUTION]
+====
+In leerboeken en vakken over databanken worden vaak oefeningen gegeven waarbij je een tekst krijgt (de zogezegde beschrijving van het probleemdomein) en gevraagd wordt om "__het model te tekenen__".
+
+Dit zijn vooral oefeningen op ERD's tekenen en minder goeie oefeningen op modelleren, precies omdat je het eigenlijk model (een ERM met alle details) overslaat.
+
+Let dus op dat je deze twee begrippen niet verwart, een ERD is geen model.
+====
+
+Opdat iedereen op dezelfde golflengte zou zitten, staan hieronder de belangrijkste zaken in een ERM nog eens samengevat.
+
+==== Entiteitsklasse (EK)
+
+We voorzien een entiteitsklasse __per *soort* ding__ waarover we data willen bijhouden.
+
+Bijvoorbeeld, enkel entiteitsklassen uit het videotheek project :
+
+* `Klant`
+* `Exemplaar`
+* `Reservatie`
+* etc.
+
+
+==== Attribuut
+
+Per stukje data dat we voor een bepaald "ding" willen onthouden, voegen we een attribuut toe aan diens entiteitsklasse.
+
+* bv. in de EK `Klant` voegen we attributen `voornaam`, `rijksregisternummers`, `postcode`, ... toe.
+* bv. in de EK `Reservatie` voegen we attributen `titel`, `medium` en `datum` toe.
+
+Bij elk attribuut noteren we **welk datatype** het attribuut heeft (i.e. om welk soort waarde het gaat). We gebruiken hier zeer generieke benamingen zodat we zeker niet aan één of andere technologie zouden denken!
+
+* `Tekst`
+* `Getal`
+* `JaNee`
+* `Datum`
+* `Tijdstip`
+* `Keuze (optieA/optieB/optieC)` : één waarde gekozen uit een vaste lijst (vgl. met enums)
+* ...
+
+We noteren ook of de waarde van het attribuut **al dan niet uniek** moet zijn voor alle dingen van die entiteitsklasse.
+
+* bv. de waarde voor het attribuut `rijksregisternummer` van EK `Klant`, mag slechts bij één klant tegelijkertijd voorkomen (geen duplicaten).
+
+We noteren ook of de waarde van het attribuut **al dan niet verplicht** is voor elke ding van die entiteitsklasse.
+
+* bv. de waarde voor het attribuut `terugDatum` van EK `Verhuring` is niet ingevuld totdat het exemplaar werd teruggebracht.
+
+We vermelden eventuele **__constraints__** die van toepassing zijn op dit attribuut (of combinatie van attributen)
+
+* bv. `lengte voornaam > 1`
+* bv. `aantal dagen >= 0`
+
+Soms twijfel je misschien of een stukje data eerder een attribuut moet zijn dan wel een volwaardige entiteitsklasse.
+
+Bijvoorbeeld, is de klant die een reservatie maakte beter een simpel attribuut in `Reservatie` of is het een eigen entiteitsklasse en moeten we een relatie gebruiken om reservatie en klant te koppelen?
+
+[TIP]
+====
+Enkele richtlijnen :
+
+* attributen zijn atomisch, we veronderstellen dat ze geen (door ons bruikbare) interne structuur hebben
+** indien een stukje data wel relevante structuur heeft kies je dus voor een entiteitsklasse
+* een attribuut heeft nul of één waarde, maar nooit meerdere waarden
+** indien een kenmerk meerdere waarden kan hebben, zul je een aparte entiteitsklasse moeten voorzien voor die waarden plus een 1-N relatie voor de koppeling
+* een attribuut kan geen relaties aangaan, enkel entiteitsklassen kunnen dit
+** indien de klant dus ook aan een verhuring moet gekoppeld kunnen worden, zal `Klant` een volwaardige entiteitsklasse moeten zijn
+====
+
+==== Relatie
+
+Een relatie koppelt informatie van (doorgaans) twee entiteitsklassen. 
+
+* bv. we willen bijhouden welke reservatie bij welke klant hoor en definiëren daarvoor een relatie tussen EK `Reservatie` en EK `Klant`.
+
+We kunnen een relatie **een naam** geven die verduidelijkt wat de relatie voorstelt
+
+* bv. de relatie `Produceert` tussen EK `Bedrijf` en EK `Product`.
+* bv. de relatie `Verwerkt` tussen EK `Bedrijf` en EK `Product`.
+
+Indien er meerdere relaties bestaan tussen twee entiteitsklassen zal het nodig zijn om elke relatie een naam te geven, zodat we ze kunnen onderscheiden.
+
+[TIP]
+====
+Soms is een naam niet nodig, of misschien vind je gewoon geen goeie naam. 
+
+In zo'n situatie kun je de relatie vernoemen naar de betrokken entiteitsklassen :
+
+* bv. we noemen de relatie gewoon `Klant-Reservatie` bij gebrek aan een goeie naam.
+====
+
+Elke entiteitsklasse speelt **een bepaalde rol** in een relatie waar ze bij betrokken is. 
+
+In tegenstelling tot de naam van een relatie, zijn de rollen best wel altijd benoemd!
+
+* bv. klant speelt de rol van 'opdrachtgever' in de relatie Klant-Reservatie
+
+[TIP]
+====
+Vaak kun je geen goeie naam vinden voor die rol, neem dan gewoon de naam van de entiteitsklasse zelf
+
+* bv. reservatie speelt de rol van 'reservatie' in de relatie Klant-Reservatie
+====
+
+Per relatie houden we bij **hoeveel dingen gekoppeld kunnen worden** van elke entiteitsklasse.
+
+We onderscheiden de volgende relaties :
+
+* 1-op-1 (1-1)
+* 1-op-veel (1-N)
+* veel-op-veel (N-M)
+
+Deze duiden op de **maximale deelname** van elke entiteitsklasse, i.e. de bovengrens. Kan een ding van de ene entiteitsklasse *tegelijkertijd* slechts aan 1 ding van de andere entiteitsklasse gekoppeld zijn, of mag het aan meerdere gekoppeld zijn?
+
+* bv. een reservatie hoort bij hoogstens 1 klant en een klant kan gerust meerdere reservaties maken.
+*** We noemen dit een 1-N relatie (ook wel : 1-op-veel relatie).
+
+[TIP]
+====
+Een ERM is geen relationeel model, dus veel-op-veel (N-M) relaties zijn perfect mogelijk in een ERM.
+
+Je moet de veel-op-veel (N-M) relaties dus niet omzetten naar 1-op-veel (1-N) relaties!
+====
+
+
+We willen ook weten wat **de minimale deelname** aan de relatie is, dit bepaalt de ondergrens (minstens 0 of minstens 1).
+
+* bv. moet elke klant minstens één reservatie hebben? Moet elke reservatie bij een klant horen of kan het ook zonder klant?
+
+De maximale en minimale deelname van elke entiteitsklasse in de relatie noemt men ook wel haar __cardinaliteit__ of __multipliciteit__.
+
+Per relatie kunnen we ook bijkomende beperkingen opleggen d.m.v. **__constraints__**.
+
+* bv. een specifiek exemplaar kan slechts door 1 klant tegelijk gehuurd worden, anders gezegd : een exemplaar kan niet aan meerdere verhuringen gekoppeld zijn als hun verhuurperiode overlapt.
+
+=== Efficiëntere ERM-notatie
+
+In de beschrijving van het ERM moet bij elk attribuut worden neergeschreven of het al dan niet uniek is en of het al dan niet verplicht is. De meeste attributen zijn niet uniek en wel verplicht, we vallen dus heel vaak in herhaling. Voor relaties en hun rolnamen kun je iets gelijkaardigs vaststellen, de rolnaam is meestal gewoon gelijk aan de naam van de entiteitsklasse.
+
+Om het ERM toch iets efficiënter te noteren, spreken we af :
+
+* elk attribuut is verplicht tenzij er expliciet "optioneel" bij staat
+* elk attribuut laat duplicaten toe, tenzij er expliciet "uniek" bij staat
+* een relatie vermeldt enkel een rolnaam indien deze verschilt van de naam van de entiteitsklasse
+** bv. indien de rol van "Klant" in een relatie gewoon "klant" is, dan vermelden we die rolnaam niet
+** bv. indien de rol van "Klant" in een relatie "huurder" is, dan vermelden we die rolnaam wel bij die relatie
+
+Dit is niet alleen minder typwerk voor de auteur, maar heeft ook voor de lezers voordelen : afwijkingen van de norm vallen hen meteen op.
+
+Als je deze (of andere) afspraken maakt in je team, dan vermeld je deze best in het domain data model document zodat elke lezer op de hoogte is.
+
+In het videotheek voorbeeldproject werden deze afspraken overgenomen in dat document (zie verderop).
+
+=== Entity Relationship Diagram (ERD)
+
+We kunnen de belangrijkste informatie in een ERM ook visueel voorstellen met diagrammen, bv. om een overzicht te geven.
+
+[CAUTION]
+====
+Bedenk wel dat zo'n diagram veel details uit het model NIET toont. Een ERD toont niet noodzakelijk alle entiteitsklassen, vermeldt zelden constraints, het toont de beschrijvingen niet, ... 
+
+Mocht een diagram alle details uit het model weergeven, dan zou het te onoverzichtelijk zijn en z'n nut verliezen.
+====
+
+Elk diagram dient om een bepaalde informatie over te brengen en bevat enkel wat relevant is.  Je moet dus telkens afwegen wat je er wel/niet op zet, dat bepaalt de boodschap die je wil overbrengen.
+
+Bij een groot data model zul je zelfs meerdere diagrammen moeten tekenen, die elk een stukje van het model verduidelijken. Op een bepaald diagram zullen dan sommige entiteitsklassen en relaties wel staan en andere dan weer niet.
+
+Onthou : **een diagram is geen model, het is slechts een weergave van een deel van een model !**
+
+Hieronder staat een voorbeeld ERD :
+
+image:erd-voorbeeld.png[een voorbeeld ERD]
+
+Je ziet welke entiteitsklassen er zijn en welke attributen ze hebben. Je ziet ook heel snel welke relaties er bestaan tussen die entiteitsklassen. Aan de uiteinden van de lijntjes kun je mooi aflezen wat de onder- en bovengrenzen zijn van de relaties, alsook wat hun eventuele rolnamen zijn (bv. rolnaam `huurder` op de `Klant-Verhuring` relatie). 
+
+
+== Voorbeeldproject videotheek
+
+Bij wijze van voorbeeld kunnen we eens een domain data model bouwen van (een stukje) van het videotheek project.
+
+Om dit voorbeeld klein te houden, beperken we ons hier tot een domain data model dat enkel de nodige data voor één use case beschrijft (namelijk BUC Exemplaar Huren).
+
+We doen in dit voorbeeld dus alsof de rest van dit project niet bestaat!
+
+[CAUTION]
+====
+Normaliter bouwen we een domain data model voor een gans BUCM (dus meerdere use cases tesamen), **het is nooit de bedoeling om dit per use case apart te doen!**
+
+In dit voorbeeld gebruiken we echter een BUCM dat (zogezegd) maar uit één use case bestaat, zodat het eenvoudig en overzichtelijk blijft.
+====
+
+De relevante documentatie voor ons domain data model in dit voorbeeld :
+
+* link:../voorbeeldproject-videotheek/bucm/buc-eh.adoc[business use case "Exemplaar huren" (BUC-EH)]
+** voor de eenvoud beperken we ons tot deze ene use case
+* link:../voorbeeldproject-videotheek/bucm/domain-rules.adoc[domeinregels]
+** dit document bevat enkel de regels die relevant zijn voor deze ene use case.
+* link:../voorbeeldproject-videotheek/ddm/domain-sample.adoc[domain sample]
+** dit document bevat enkel de afgesplitste data die relevant is voor de scenario's van deze ene use case.
+
+Bekijk de tekst van deze use case aandachtig en kijk vooral naar de representatieve scenario's onderaan, deze vermelden per scenario een pad en de nodige data.
+
+Een deel van deze data komt uit het domain sample, dit is data die we afsplitsen omdat ze (potentieel) herbruikbaar is in meerdere scenario's (binnen dezelfde use case of in verschillende use cases). De rest van de data is scenario-specifiek en staat gewoon bij het scenario vermeld.
+
+Bekijk hoe de scenario data is vastgelegd en hoe verwezen wordt naar het **domain sample** document. Open dit document en ga na hoe de gemeenschappelijke voorbeelddata wordt beschreven.
+
+Denk eraan dat ons domain data model alle data uit het probleemdomein moet kunnen beschrijven, dus zeker ook de voorbeelddata die we opgesteld hebben!
+
+Nu je een idee hebt van hoe de voorbeelddata eruitziet, kun je het **domain data model** erbij nemen :
+
+* het link:../voorbeeldproject-videotheek/ddm/domain-data-model.adoc[domain data model] document
+
+
+
+== Mapping tekstueel ERM naar Visual Paradigm ERD
+
+Als we een ERD willen tekenen met bv. Visual Paradigm (VP), zullen we moeten nagaan dat alles wat we in het ERM modelleren daadwerkelijk een tegenhanger heeft in Visual Paradigm.
+
+Bijvoorbeeld, de datatypes in ons ERM zijn generiek (bv. "Tekst") en komen niet voor in Visual Paradigm. We moeten dus beslissen hoe we deze datatypes op het diagram zullen voorstellen.
+
+We zouden Visual Paradigm kunnen aanpassen en nieuwe datatypes toevoegen die perfect overeenkomen met onze ERM datatypes, maar dat leidt ons te ver in de mogelijkheden van VP. 
+
+We zullen simpelweg gebruik maken van de bestaande VP datatypes (`varchar`, `integer`, ...) via de onderstaande omzetting :
+
+|===
+|ERM element | Visual Paradigm tegenhanger
+
+|datatype Tekst | `varchar(255)`
+|datatype JaNee | `bit`
+|datatype Numeriek | `integer(10)` of `numeric(10,5)`
+|datatype Keuze (optieA/optieB/optieC) | `varchar (255)`
+|attribuut verplicht/optioneel | niet/wel `nullable`
+|attribuut uniek/duplicaten toegelaten| wel/niet `unique`
+|===
+
+Je kunt de datatypes netjes aflezen op het ERD :
+
+image:erd-voorbeeld.png[een voorbeeld ERD]
+
+Let ook eens op de witte `N` en rode `U` bij sommige attributen, deze duiden respectievelijk op **N**ullable en **U**nique.
+

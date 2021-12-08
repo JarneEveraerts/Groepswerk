@@ -1,0 +1,82 @@
+= Domain sample (DS)
+Yanic Inghelbrecht
+v2021.12.03.23.59
+// toc and section numbering
+:toc: preamble
+:toclevels: 4
+// geen auto section numbering voor oefeningen (handigere titels en toc)
+//:sectnums:  
+:sectlinks:
+:sectnumlevels: 4
+// source code formatting
+:prewrap!:
+:source-highlighter: rouge
+:source-language: csharp
+:rouge-style: github
+:rouge-css: class
+// inject css for highlights using docinfo
+:docinfodir: ../common
+:docinfo: shared-head
+// folders
+:imagesdir: images
+// experimental voor kdb: en btn: macro's van AsciiDoctor
+:experimental:
+
+//preamble
+[.text-right]
+versie {revnumber}
+
+== Introductie
+
+In dit document staat de voorbeelddata uit het probleemdomein die we gebruiken in de scenario's van de use cases.
+
+* alle data die (potentieel!) in meerdere scenario's van pas kan komen, wordt hier beschreven. 
+* Gegevens die specifiek bij één scenario horen en niet herbruikbaar zijn, staan bij dat scenario vermeld (dus niet hier).
+
+Door deze data in een apart document te plaatsen, vermijden we duplicatie in die scenario's.
+
+Later in het ontwikkelingsproces zal deze data via de scenario's o.a. gebruikt worden bij het testen van het systeem.
+
+== Klanten
+
+* "Jan"
+** lidkaart 0001
+** geboortedatum 02/02/2000
+
+* "Piet"
+** lidkaart 0002
+** geboortedatum 03/03/2005
+
+== Exemplaren
+
+* "Shrek"
+** id plaatje : 0001
+** kinderfilm, niet nieuw
+** VHS
+
+* "Die Hard"
+** id plaatje : 0002
+** gewone film, niet nieuw
+** DVD
+
+* "Allemaal samen, tous ensemble"
+** id plaatje : 0003
+** volwassenenfilm, niet nieuw
+** DVD
+
+== Reservaties
+
+* "01"
+** klant Piet (0002)
+** film Shrek op VHS
+** datum 05/01/2020
+
+== Andere data
+
+* Sluitingsdag is elke maandag
+* Dagprijzen
+** Nieuwe film 3 Euro
+** Gewone film 2 Euro
+** Kinderfilm 2 Euro
+** Volwassenenfilm 2 Euro
+** Spelletje 2 Euro

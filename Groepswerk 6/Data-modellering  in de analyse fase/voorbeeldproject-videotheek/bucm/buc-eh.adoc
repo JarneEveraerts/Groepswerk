@@ -1,0 +1,215 @@
+= Business use case model (BUCM)
+Yanic Inghelbrecht
+v2021.12.03.23.59
+// toc and section numbering
+:toc: preamble
+:toclevels: 4
+// geen auto section numbering voor oefeningen (handigere titels en toc)
+//:sectnums:  
+:sectlinks:
+:sectnumlevels: 4
+// source code formatting
+:prewrap!:
+:source-highlighter: rouge
+:source-language: csharp
+:rouge-style: github
+:rouge-css: class
+// inject css for highlights using docinfo
+:docinfodir: ../common
+:docinfo: shared-head
+// folders
+:imagesdir: images
+// experimental voor kdb: en btn: macro's van AsciiDoctor
+:experimental:
+
+//preamble
+[.text-right]
+versie {revnumber}
+
+== BUC-EH : Exemplaar Huren
+
+De klant probeert een exemplaar te huren gedurende een bepaalde periode. Er moet nagegaan worden of dit mogelijk is en een kost op de lopende rekening geplaatst worden.
+
+=== Actors
+
+*Klant*, Medewerker
+
+=== Preconditie
+
+Klant is geïdentificeerd.
+
+=== Basispad
+
+. De KLANT wil een exemplaar huren.
+. De KLANT geeft het identificatie plaatje van het exemplaar aan de MEDEWERKER.
+. De MEDEWERKER gaat na dat de KLANT dit exemplaar mag huren.
+* volgens link:domain-rules.adoc[DR-VEV].
+. De KLANT geeft aan hoe lang hij het exemplaar wil houden.
+. De MEDEWERKER gaat na dat dit kan gedurende de gevraagde periode.
+* volgens link:domain-rules.adoc[DR-EVP].
+. De MEDEWERKER gaat na dat de dag waarop het exemplaar teruggebracht moet worden, geen voorziene sluitingsdag is.
+. De MEDEWERKER noteert de verhuring.
+. De MEDEWERKER voegt de kost toe aan de lopende rekening van de KLANT.
+* volgens link:domain-rules.adoc[DR-KEP].
+. De use case eindigt
+
+==== Postconditie
+
+Het exemplaar is in het bezit van de klant en de kosten zijn aan de lopende rekening van de klant toegevoegd. Het exemplaar moet niet teruggebracht worden op een voorziene sluitingsdag.
+
+__Merk op dat stap 6 van het basispad nodig is wegens__ link:domain-rules.adoc[DR-VPS].
+
+=== Alternatief A : Stoppen
+
+. De KLANT kan op elk moment beslissen om te stoppen.
+. De MEDEWERKER maakt eventuele wijzigingen ongedaan.
+. De use case eindigt.
+
+==== Postconditie
+
+Niets gewijzigd.
+
+=== Alternatief B : Mag niet verhuurd worden aan klant
+
+[start=3]
+. De MEDEWERKER merkt dat de KLANT deze titel niet mag huren.
+. De MEDEWERKER informeert de KLANT hierover.
+. De use case eindigt.
+
+==== Postconditie
+
+Niets gewijzigd.
+
+=== Alternatief C : Exemplaar niet verhuurbaar gedurende de gevraagde periode
+
+[start=5]
+. De MEDEWERKER merkt dat het exemplaar niet verhuurbaar is voor de gevraagde periode.
+. De MEDEWERKER informeert de KLANT hierover en vraagt om een kortere periode.
+. De use case gaat verder in stap 4 van het basispad.
+
+__Merk op dat een gelijkwaardig exemplaar zoeken in alternatief C, zinloos zou zijn vermits__ link:domain-rules.adoc[DR-EVD] uitgedrukt is in termen van (alle) gelijkwaardige exemplaren._
+
+=== Alternatief D : Exemplaar moet teruggebracht worden op sluitingsdag
+
+[start=6]
+. De MEDEWERKER merkt dat het exemplaar moet teruggebracht worden op een voorziene sluitingsdag.
+. De MEDEWERKER verlengt de verhuurperiode zodanig dat het exemplaar niet meer op een voorziene sluitingsdag moet teruggebracht worden.
+. De MEDEWERKER informeert de KLANT hierover.
+. De use case gaat verder met de volgende stap van het basispad.
+
+__Merk op dat in alternatief D, het exemplaar sowieso verhuurbaar zal zijn op elke voorziene sluitingsdag, er zijn dan immers geen passende reservaties. Het is dus zeker dat het exemplaar verhuurbaar zal zijn in de verlengde verhuurperiode.__
+
+
+
+
+
+=== Scenario's
+
+==== SC-EH-01 (basispad)
+
+Data uit link:../ddm/domain-sample.adoc[domain sample] :
+
+* klant : Jan (0001)
+* exemplaar : Shrek (0001)
+
+Scenario-specifieke data :
+
+* relevante reservaties : geen
+* het is vrijdag 03/01/2020
+* klant wil huren voor 1 dag
+* toegevoegde kost op de rekening : 2 Eur
+	
+Gevolgd pad doorheen de BUC :
+
+. basispad
+
+De medewerker bepaalt een kost van 2Eur (kinderfilm voor 1 dag) en voegt deze toe aan de lopende rekening van de klant.
+
+Later in het ontwikkelingsproces gaan we van dit scenario meerdere varianten moeten maken waarmee we de kortingsformules (en hun combinaties) kunnen testen.
+
+
+==== SC-EH-02 (stoppen)
+
+Data uit link:../ddm/domain-sample.adoc[domain sample] :
+
+* klant : Jan (0001)
+* exemplaar : Shrek (0001)
+
+Scenario-specifieke data :
+
+* relevante reservaties : geen
+* het is vrijdag 03/01/2020
+* klant wil huren voor 1 dag
+
+	
+Gevolgd pad doorheen de BUC :
+
+. Basispad
+. Alternatief pad A : Stoppen
+
+
+
+==== SC-EH-03 (volwassenenfilm minderjarige)
+
+Data uit link:../ddm/domain-sample.adoc[domain sample] :
+
+* klant : Piet (0002)
+* exemplaar : Allen samen, tous ensemble (0003)
+
+Scenario-specifieke data :
+
+* relevante reservaties : geen
+* het is vrijdag 03/01/2020
+* klant wil huren voor 1 dag
+
+Gevolgd pad doorheen de BUC :
+	
+. Basispad
+. Alternatief pad B : Mag niet verhuurd worden aan klant
+
+
+==== SC-EH-04 (niet verhuurbaar in gevraagde periode)
+
+Data uit link:../ddm/domain-sample.adoc[domain sample] :
+
+* klant : Jan (0001)
+* exemplaar : Shrek (0001)
+
+Scenario-specifieke data :
+
+* relevante reservaties : 01
+* het is vrijdag 03/01/2020
+* klant wil huren voor 3 dagen maar gaat akkoord met 2 dagen
+
+Gevolgd pad doorheen de BUC :
+
+. Basispad
+. Alternatief pad C : Exemplaar niet verhuurbaar gedurende de gevraagde periode
+. Basispad
+
+De medewerker stelt vast dat er een conflicterende reservatie is op 05/01/2020 zodat de film ten laatste die dag al moet teruggebracht worden.
+De klant gaat akkoord met een verhuring voor 2 dagen (terugbrengen op zondag 05/01/2020).
+De medewerker bepaalt een kost van 4 Eur (kinderfilm voor 2 dagen) en voegt deze toe aan de lopende rekening van de klant.
+
+
+==== SC-EH-05 (terugbrengen op sluitingsdag)
+
+Data uit link:../ddm/domain-sample.adoc[domain sample] :
+
+* klant : Jan (0001)
+* exemplaar : Die Hard (0002)
+
+Scenario-specifieke data :
+
+* relevante reservaties : geen
+* het is zondag 12/01/2020
+* klant wil huren voor 1 dag
+	
+Gevolgd pad doorheen de BUC :
+
+. Basispad
+. Alternatief D : Exemplaar moet teruggebracht worden op sluitingsdag
+. Basispad
+
+De medewerker stelt vast dat het exemplaar moet worden teruggebracht worden op een sluitingsdag (maandag 13/01/2020). De verhuurperiode wordt verlengd tot dinsdag 14/01/2020. De medewerker bepaalt een kost van 2Eur (gewone film voor 1 dag) en voegt deze toe aan de lopende rekening van de klant.
+
