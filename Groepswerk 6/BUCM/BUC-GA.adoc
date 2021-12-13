@@ -1,0 +1,157 @@
+:toc: auto
+
+== BUC_GA - Geld Afhalen Machine
+De Klant probeerd geld af te halen aan de machine. Er moet worden nagegaan of het mogelijk is en er word geld afgehaald.
+
+=== Actors
+*Klant*, *machine*
+
+=== Preconditie
+Klant heeft rekening, bezit over bankkaart en pincode.
+
+=== Basis pad
+1. De *Klant* wilt geld afhalen.
+2. De *klant* voert pincode in.
+3. De *Klant* kiest in het menu om geld af te halen.
+4. De *klant* geeft het gewenste bedrag in 
+5. De *machine* controleert het saldo.
+6. De *machine* geeft het geld aan de klant.
+7. De *Klant* drukt op stop en neemt zijn kaart terug.
+8. De use case eindigt
+
+=== Postconditie
+De Klant heeft het geld ontvangen en de machine heeft het geld van de rekening gehaald.
+
+=== Alternatief A: Annuleren
+1. De *Klant* kan op elk moment beslissen om te stoppen.
+2. De *machine* maakt eventuele wijzigingen ongedaan.
+3. De use case eindigt
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief B: Verkeerde PIN
+1. De *Klant* voert een verkeerde pin in.
+2. De *machine* informeerd de klant over beschikbare pogingen.
+3. De use case eindigd.
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief B.A: Verkeerde PIN
+1. De *Klant* voert een verkeerde pin in.
+2. De *machine* informeerd de klant dat de kaart word ingeslikt.
+3. De use case eindigd.
+
+=== Postconditie
+De machine slikt de kaart in en informeert de bank.
+
+=== Alternatief C: Saldo ontoerijkbaar 
+1. De *machine* merkt op dat het opgegeven bedrag niet overeenkomt met het beschikbare saldo.
+2. De *machine* informeerd de *Klant* over zijn beschikbaar saldo.
+3. De use case gaat verder in stap 3 van het basispad.
+
+
+
+
+== BUC_GS - Geld Afhalen Loket
+De Klant probeerd geld af te halen aan het loket. Er moet worden nagegaan of het mogelijk is en er word geld afgehaald.
+
+=== Actors
+*Klant*, *Medewerker*
+
+=== Preconditie
+*Klant* heeft rekening, bezit over bankkaart en pincode. Loket is open. 
+
+=== Basis pad
+1. De *Klant* wilt geld afhalen.
+2. De *Klant* gaat naar het loket en vraagt om geld af te halen.
+3. De *Medewerker* controleerd of het mogelijk is om geld af te halen.
+4. De *Medewerker* geeft het geld.
+5. De *Medewerker* past het saldo aan.
+6. De *Medewerker* geeft een afhaalbewijs aan de *Klant*.
+7. De use case eindigt.
+
+=== Postconditie
+De Klant heeft het geld gestort en ontvangen op zijn rekening.
+
+=== Alternatief A: Annuleren
+1. De *Klant* kan op elk moment beslissen om te stoppen.
+2. De *Medewerker* maakt eventuele wijzigingen ongedaan.
+3. De use case eindigt
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief B: Verkeerde PIN
+1. De *Klant* voert een verkeerde pin in.
+2. De *Medewerker* informeerd de klant over beschikbare pogingen.
+3. De use case eindigd.
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief B.A: Verkeerde PIN
+1. De *Klant* voert een verkeerde pin in.
+2. De *Medewerker* informeerd de klant dat de kaart in beslag word genomen.
+3. De use case eindigd.
+
+=== Postconditie
+De medewerker neemt de kaart in beslag en informeert de bank.
+
+=== Alternatief C: Saldo ontoerijkbaar 
+1. De *Medewerker* merkt op dat het opgegeven bedrag niet overeenkomt met het beschikbare saldo.
+2. De *Medewerker* informeerd de *Klant* over zijn beschikbaar saldo.
+3. De use case gaat verder in stap 3 van het basispad.
+
+
+== Representatieve scenario’s
+
+=== Geld Afhalen - automaat
+
+==== SC-GA-A001 - Succesvol Geld Afhalen
+
+[underline]#Klant# Maarten Berkhof wenst geld af te halen aan de bankautomaat.
+Maarten steekt zijn bankkaart in de automaat en voert vervolgens zijn pincode in. Hij maakt kenbaar aan de automaat dat hij geld wil afhalen van zijn rekening door in het menu 'Geld opnemen' te kiezen.
+
+De automaat vraagt vervolgens aan Maarten wat het gewenste bedrag is en in welke biljetten hij het bedrag wenst te krijgen. Maarten voert zijn gewenste bedrag van 20 EUR in en duid aan dat hij dit in 2 biljetten van 10 EUR wenst te krijgen. De automaat controleert het saldo van Maarten en gaat na of het bedrag van zijn rekening kan afgehaald worden.
+
+De automaat geeft het bedrag aan Maarten en verlaagd het saldo van zijn rekening met -20 EUR.
+De automaat vraagt aan Maarten of hij een ticket wenst waarop Maarten ja aanduid. De automaat drukt een ticket af en keert terug naar het hoofdmenu. Maarten drukt op stop en de automaat geeft zijn kaart terug.
+
+*De use case eindigt*.
+
+
+==== SC-GA-A002 - Saldo Ontoerijkend
+
+[underline]#Klant# Maarten Berkhof wenst geld af te halen aan de bankautomaat.
+Maarten steekt zijn bankkaart in de automaat en voert vervolgens zijn pincode in. Hij maakt kenbaar aan de automaat dat hij geld wil afhalen van zijn rekening door in het menu 'Geld opnemen' te kiezen.
+
+De automaat vraagt vervolgens aan Maarten wat het gewenste bedrag is en in welke biljetten hij het bedrag wenst te krijgen. Maarten voert zijn gewenste bedrag van 20 EUR in en duid aan dat hij dit in 2 biljetten van 10 EUR wenst te krijgen. De automaat controleert het saldo van Maarten en gaat na of het bedrag van zijn rekening kan afgehaald worden.
+
+De automaat merkt dat Maarten niet genoeg geld heeft op zijn rekening en toont een melding op het scherm om aan Maarten te laten weten dat zijn saldo ontoerijkend is. De automaat keert terug naar het begin menu.
+
+Maarten drukt op stop, de automaat geeft zijn kaart terug en Maarten neemt zijn kaart terug.
+
+*De use case eindigt*.
+
+
+
+=== Geld Afhalen - loket
+
+==== SC-GA-L001 - Succesvol Geld Afhalen
+
+[underline]#Klant# Maarten Berkhof wenst geld af te halen aan het loket. Hij geeft zijn bankkaart en maakt dit kenbaar aan de [underline]#loketmedewerker (LMW)#. De LMW vraagt aan Maarten hoeveel geld hij wenst af te halen. Maarten zegt aan de LMW dat hij 20 EUR wenst in 2 biljetten van 10 EUR.
+
+De LMW gaat na of dit bedrag beschikbaar is op Maarten zijn rekening en gaat achter het geld in de kluis.
+De LMW verminderd Maarten zijn saldo met -20 EURO. De LMW geeft een papier aan Maarten en vraagt hem om zijn handtekening te plaatsen om te bevestigen dat hij het geld ontvangen heeft. Maarten geeft het ondertekende papier terug aan de LMW en Maarten ontvangt zijn geld.
+
+*De use case eindigt*.
+
+==== SC-GA-L002 - Saldo Ontoerijkend
+
+[underline]#Klant# Maarten Berkhof wenst geld af te halen aan het loket. Hij geeft zijn bankkaart en maakt dit kenbaar aan de [underline]#loketmedewerker (LMW)#. De LMW vraagt aan Maarten hoeveel geld hij wenst af te halen. Maarten zegt aan de LMW dat hij 20 EUR wenst in 2 biljetten van 10 EUR.
+
+De LMW gaat na of dit bedrag beschikbaar is op Maarten zijn rekening en merkt op dat hij niet genoeg geld heeft om het gewenste bedrag af te halen. De LMW deelt dit mee aan Maarten en geeft zijn bankkaart terug. Maarten neemt zijn kaart terug en verlaat het loket.
+
+*De use case eindigt*.

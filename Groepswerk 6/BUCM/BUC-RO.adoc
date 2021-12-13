@@ -1,0 +1,129 @@
+:toc: auto
+== BUC_ZO
+De *klant* wilt een zichtrekening openen
+=== Actors
+Klant,Medewerker
+
+=== Preconditie
+ID-Klant,Loket is open.
+
+
+=== Basis pad
+1. De *klant* wilt een spaarrekening openen.
+2. De *klant* gaat naar het loket en vraagt voor een spaarrekening te openen.
+3. De *medewerker* vraagt voor identificatie/persoonlijke gegevens.
+4. De *medewerker* controleert de identificatie. volgens link:domeinregels.adoc[DR_I]
+5. De *medewerker* start de procedure.
+6. De *klant* stelt zijn kredietvoet in.
+7. De *medewerker* stuurt de aanvraag door naar het hoofdbureau.
+8. De use case eindigt
+=== Postconditie
+De klant krijgt een brief met de info en de bankkaart.
+
+=== Alternatief A: Annuleren
+1. De *Klant* kan op elk moment beslissen om te stoppen.
+2. De *medewerker* maakt eventuele wijzigingen ongedaan.
+3. De use case eindigt
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief A: ongeldige ID
+1. De *medewerker* stelt vast dat de ID ongeldig is.
+2. De *medewerker* informeerd de klant.
+3. use case eindigt.
+
+=== Postconditie
+Niks gewijzigd
+
+
+== BUC_SO
+De *klant* wilt een zichtrekening openen
+=== Actors
+Klant,Medewerker
+
+=== Preconditie
+bankkaart,Referentie-rekening,Loket is open.
+
+
+=== Basis pad
+1. De *klant* wilt een spaarrekening openen.
+2. De *klant* gaat naar het loket en vraagt voor een spaarrekening te openen.
+3. De *medewerker* vraagt voor de bankkaart van de klant.
+4. De *medewerker* controleert de bankkaart.
+5. De *medewerker* start de procedure.
+6. De *klant* stelt zijn Referentie-rekening in.
+7. De *medewerker* controleerd alle gegevens.
+8. De *medewerker* stuurt de aanvraag door naar het hoofdbureau.
+9. De use case eindigt
+=== Postconditie
+De klant krijgt een brief met de info.
+
+=== Alternatief A: Annuleren
+1. De *Klant* kan op elk moment beslissen om te stoppen.
+2. De *medewerker* maakt eventuele wijzigingen ongedaan.
+3. De use case eindigt
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief B: ongeldige ID
+1. De *medewerker* stelt vast dat de ID ongeldig is.
+2. De *medewerker* informeerd de klant.
+3. use case eindigt.
+
+=== Postconditie
+Niks gewijzigd
+
+=== Alternatief C: ongeldige referentie-rekening
+1. De *medewerker* stelt vast dat de referentie-rekening ongeldig is.
+2. De *medewerker* informeerd de klant.
+3. use case eindigt.
+
+=== Postconditie
+Niks gewijzigd
+
+== Representatieve scenario’s
+
+=== Zichtrekening openen zonder co-titularissen
+
+[underline]#klant# Maarten Berkhog wenst een zichtrekening te openen.
+Maarten geeft alle nodige informatie af aan de medewerker zodat ze kunnen beginnen met het maken van een nieuwe zichtrekening. Er wordt aan Maarten gevraagd of iemand anders ook deze rekening kan gebruiken en hij zegt nee.
+
+De medewerker vraagt achter een geldig rekeningnummer dat kan gelinkt worden met de zichtrekening en hij maakt deze aan, vraagt hierbij een bankkaart aan. De medewerker vraagt of hij nog iets kan doen en Maarten zegt nee.
+
+*De use case eindigt.*
+
+=== Zichtrekening openen met 1 co-titularis
+
+[underline]#klant# Maarten Berkhog wenst een zichtrekening te openen.
+Maarten geeft alle nodige informatie af aan de medewerker zodat ze kunnen beginnen met het maken van een nieuwe zichtrekening. De medewerker vraagt of er een co-titularis moet worden toegevoegd en Maarten zegt ja.
+
+De medewerker vraagt de informatie van de titularis. Maarten zegt voor de naam  Godaert, de voornaam Laura en het adres Leopoldlaan 125, 2000 Antwerpen België. De medewerker voegt de  informatie van de titularis in en gaat door met het maken van een nieuwe zichtrekening.
+
+De medewerker vraagt de kaart aan nadat hij een geldig rekeningnummer geeft.
+
+*De use case eindigt.*
+
+=== Spaarrekening openen zonder co-titularis
+
+[underline]#klant# Maarten Berkhog wenst een spaarrekening te openen.
+De medewerker vraagt de rekeningnummer van Maarten om aan de hand daarvan de spaarrekening te openen.
+
+Maarten geeft zijn rekeningnummer BE09 7360 7980 1706 met de bijhorende informatie. De medewerker dan vraagt of er een co-titularis moet worden toegevoegd waarop hij neen antwoord.
+
+De medewerker maakt de spaarrekening aan en vraagt aan Maarten hoeveel hij op zijn spaarrekening wilt zetten. Maarten antwoord hierop € 10000.
+
+*De use case eindigt.*
+
+
+=== Spaarrekening openen met 1 co-titularis
+
+[underline]#klant# Maarten Berkhog wenst een spaarrekening te openen.
+De medewerker vraagt de rekeningnummer van Maarten om aan de hand daarvan de spaarrekening te openen.
+
+Maarten geeft zijn rekeningnummer BE09 7360 7980 1706 met de bijhorende informatie. De medewerker dan vraagt of er een co-titularis moet worden toegevoegd waarop hij ja antwoord, de medewerker vraagt dan de gegevens van de co-titularis. Maarten geeft de naam en voornaam zowel als het adres.
+
+De medewerker maakt de spaarrekening aan en vraagt aan Maarten hoeveel hij op zijn spaarrekening wilt zetten. Maarten antwoord hierop € 10000.
+
+*De use case eindigt.*

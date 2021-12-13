@@ -1,0 +1,36 @@
+==  BUC-KR Klant Registreren
+
+=== Actors
+Persoon, *Medewerker*
+ 
+=== Preconditie 
+geen
+
+=== Basis pad
+. De *Persoon* wil zich registreren als klant van de bank.
+. De *Medewerker* vraagt aan de persoon zijn identiteitskaart.
+. De *Persoon* geeft de identiteitskaart.
+. De *Medewerker* controleert of de *Persoon* aan de vereisten voldoet om klant te mogen worden.
+. De *Medewerker* regisreert de *Persoon* zijn gegevens.
+*De use case eindigt*
+
+==== Postconditie
+De *Persoon* is geregistreert als klant van de bank.
+
+=== Alternatief A: Persoon voldoet niet aan de vereisten
+[start=5]
+. De *Medewerker* merkt dat de *Persoon* niet voldoet aan de vereisten om klant te worden.
+. De *Medewerker* informeert de *Persoon* hierover.
+*De use case eindigt*
+
+==== Postconditie
+De Persoon is niet geregistreert als klant.
+
+=== Alternatief B: Persoon is al klant van de bank
+[start=5]
+. De *Medewerker* merkt dat de *Persoon* al een dienst van de bank gebruikt en dus al klant is.
+. De *Medewerker* informeert de *Persoon* hierover.
+*De use case eindigt*
+
+==== Postconditie
+De Persoon was al geregistreert als klant.
