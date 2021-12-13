@@ -35,20 +35,20 @@
 link:domeinregels.adoc[Domeinregels]
 
 
-== Scenario's
+== Representatieve scenario's
 
-=== S1 Basis Pad
+=== SC-GOI-A001
 
-Klant 1 wilt geld overschrijven en gaat naar de bank. Klant 1 geeft zijn iD aan de medewerkster. Medewerkster controlleerd het ID. Klant 1 geeft het rekeningnummer van de ontvanger aan de medewerkster en kiest het gewenste bedrag. Klant 1 ondertekent de bevestiging. Medewerkster vraagt aan klant 1 of hij/zij een ticket wilt. Use case eindigt.
+Maarten wilt geld overschrijven en gaat naar de bank. Maarten geeft zijn iD aan de Medewerker. De medewerker controlleerd het ID. Maarten geeft het rekeningnummer van de ontvanger aan de Medewerker en kiest het gewenste bedrag. Maarten ondertekent de bevestiging. Medewerker vraagt aan Maarten of hij/zij een ticket wilt. Use case eindigt.
 
-=== S2 Alternatief Pad 2.1
+=== SC-GOI-A002
 
-Klant 1 wilt geld overschrijven en gaat naar de bank. Klant 1 geeft zijn iD aan de medewerkster. Medewerkster controlleerd het ID. Het ID is niet geldig. Use case eindigt.
+Maarten wilt geld overschrijven en gaat naar de bank. Maarten geeft zijn iD aan de Medewerker. Medewerker controlleerd het ID. Het ID is niet geldig. Use case eindigt.
 
-=== S3 Alternatief Pad 3.1
+=== SC-GOI-A003
 
-Klant 1 wilt geld overschrijven en gaat naar de bank. Klant 1 geeft zijn iD aan de medewerkster. Medewerkster controlleerd het ID. Klant 1 geeft het rekeningnummer van de ontvanger. Rekeningnummer is niet geldig. Use case eindigt.
+Maarten wilt geld overschrijven en gaat naar de bank. Maarten geeft zijn iD aan de Medewerker. Medewerker controlleerd het ID. Maarten geeft het rekeningnummer van de ontvanger. Rekeningnummer is niet geldig. Use case eindigt.
 
-=== S4 Alternatief Pad 4.1
+=== SC-GOI-A004
 
-Klant 1 wilt geld overschrijven en gaat naar de bank. Klant 1 geeft zijn iD aan de medewerkster. Medewerkster controlleerd het ID. Klant 1 geeft het rekeningnummer van de ontvanger aan de medewerkster en kiest het gewenste bedrag. Klant 1 heeft niet genoeg saldo. Use case eindigt.
+Maarten wilt geld overschrijven en gaat naar de bank. Maarten geeft zijn iD aan de Medewerker. Medewerker controlleerd het ID. Maarten geeft het rekeningnummer van de ontvanger aan de Medewerker en kiest het gewenste bedrag. Maarten heeft niet genoeg saldo. Use case eindigt.
