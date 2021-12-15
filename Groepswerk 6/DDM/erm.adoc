@@ -52,11 +52,11 @@ Dit bevat de eigenaar van de zichtrekening
 
 tekst, verplicht, uniek
 
-=== 2.2 Relatie : Zichtrekening "behoort tot" Klant (1-N)
+=== 2.2 Relatie : Zichtrekening "behoort tot" Klant (N-N)
 
-De zichtrekening "behoort tot" een Klant
+De zichtrekening "behoort tot" een of meeredere Klanten
 
-Elke zichtrekening (rol : zichtrekening) heeft precies 1 Klant.
+Elke zichtrekening (rol : zichtrekening) heeft 1 of meerdere Klanten.
 
 Elke Klant (rol : eigenaar) heeft minstens 1 zichtrekening maar kan er meerdere hebben.
 
@@ -75,5 +75,45 @@ nummeriek, verplicht, uniek
 ==== 3.1.2 attribuut Klant
 
 Dit bevat de eigenaar van de zichtrekening
+
+tekst, verplicht, uniek
+
+=== 4.1 Entiteitklasse Spaarrekening openen
+
+De klant kan een spaarrekening openen.
+
+==== 4.1.1 attribuut Rekeningnummer
+
+Dit bevat het rekeningnummer van de zichtrekening.
+
+nummeriek, verplicht, uniek
+
+==== 4.1.2 attribuut eigenaar
+
+Dit bevat de eigenaar van de spaarrekening
+
+tekst, verplicht, uniek
+
+=== 4.2 Relatie : spaarrekening "behoort tot" Klant (N-N)
+
+De spaarrekening "behoort tot" een Klant
+
+Elke spaarrekening (rol : spaarrekening) kan meerdere dan 1 Klant hebben.
+
+Elke Klant (rol : eigenaar) heeft minstens 1 spaarrekening maar kan er meerdere hebben.
+
+=== 5.1 entiteisklasse Geld overschrijven intern
+
+De klant kan intern geld overschrijven.
+
+==== 5.1.1 attribuut geld overschrijven intern
+
+Dit bevat het rekeningnummer van de rekening.
+
+nummeriek, verplicht, uniek
+
+==== 5.1.2 attribuut Klant
+
+Dit bevat de eigenaar van de rekening
 
 tekst, verplicht, uniek

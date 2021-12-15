@@ -45,3 +45,14 @@ Verslag geschreven.
 
 === *Jarne*
 De student heeft het bestand 'erm.adoc' gemaakt.
+
+== *9/12/2021*
+=== *Jason*
+De student heeft de Domain data model (DDM) herwerkt. *(Opdracht 3)*
+
+=== *Jonas*
+De student heeft de representatieve scenario's geschreven voor Geld Overschtrijven Intern (BUC-GOI). *(Opdracht 2)*
+Verslag geschreven.
+
+=== *Jarne*
+De student heeft de BUC's herwerkt op basis van de feedback die we kregen. En heeft het ERD diagram gemaakt. *(Opdracht 1, 4)*
