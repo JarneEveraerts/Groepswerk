@@ -1,0 +1,32 @@
+= FAQ
+
+== Vragen
+
+[qanda]
+Is de voogd genoodzaakt familie te zijn??:: De voogd moet geen familie zijn. Dit speelt ook niet echt een rol in onze bank. Je moet hier dus geen rekening mee houden.
+
+Hoeveel inspraak heeft de voogd over de rekening?:: De co-titularis kan hetzelfde verrichten als de titularis behale een rekening sluiten kan niet door de co-titularis gedaan worden (maar die functionaliteit hebben we niet).
+
+Moet de voogd ook klant zijn bij dezelfde bank?:: De co-titularis moet inderdaad wel een klant van dezelfde bank zijn.
+
+Kan hetzelfde bedrag naar dezelfde rekening overgeschreven worden na elkaar?:: Ja hoor onze VSB doet hier geen controles op.
+
+Dient er verplicht een mededeling te zijn bij een overschrijving. Is er een keuze tussen vrije en gestructureerde mededelingen?:: Er is geen verplichting tot een mededeling. Onze VSB laat het momenteel enkel maar toe om vrije mededelingen mee te geven dus voor de moment geen gestructureerde.
+
+Welke persoonsgegevens zijn verplicht van de klant om registratie te voldoen?:: Voornaam, achernaam, geboortedatum, straat, huisnummer, postcode, gemeente, rijksregisternummer.
+
+Is er een kredietlimiet op het overschrijven?:: Neen er is geen limiet op overschrijvingen natuurlijk moet het saldo dit wel toelaten.
+
+Kan de klant overschrijven via een automaat?:: Neen.
+
+Moet de persoon klant zijn bij onze bank om te kunnen overschrijven:: Ja de persoon moet klant zijn en een rekening hebben omdat dit als bronrekening dient.
+
+Hoelang duurt het voor het bedrag overgeschreven is naar de ontvanger?:: Instant maar dit is eigenlijk niet belangrijk voor onze bank.
+
+Moet er een mededeling zijn bij het overschrijven?:: Er kan enkel een vrije mededeling meegeven worden (niet verplicht) dus geen gestructureerde mededelingen.
+
+Is de voogd genoodzaakt om klant te zijn bij de financiële instelling vooralleer hij/zij wordt toegelaten om beheerder te mogen zijn van een externe rekening?:: De co-titularis (voogd) moet inderdaad klant zijn bij de VSB.
+
+Moet je bij grote stortingen niet alleen je pincode maar ook je geboortedatum ingeven?:: Neen, onze VSB is niet zo veeleisend op dat vlak.
+
+Moet je naar het hoofdkantoor gaan om een rekening te openen?:: Neen hoor elk filliaal van de VSB kan een rekening openen.
