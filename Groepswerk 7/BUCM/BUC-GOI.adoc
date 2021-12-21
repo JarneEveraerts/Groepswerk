@@ -1,0 +1,54 @@
+== BUC-GOI Geld OVerschrijveen Intern
+
+=== Actoren
+
+* Klant en medewerker
+
+=== Precondities 
+
+* Bankkaart hebben
+
+=== Basis pad 
+
+. Klant wenst geld over te schrijven
+. Klant geeft ID aan medewerker
+. Klant geeft rekeningnummer van de ontvanger
+. Klant geeft gewenste bedrag in om over te schrijven
+. Klant ondertekent de bevestiging
+. Medewerker schrijft het gewenste bedrag over
+. Klant kiest of hij/zij een ticket wilt
+. Klant neemt bankkaart terug
+
+=== Postcondities
+
+* Succesvol geld overgeschreven
+
+=== Alternatieve paden
+
+* 2.1  ID vervallen
+* 2.1a Use case eindigt
+* 3.1  Foutief rekeningnummer
+* 3.1a Use case eindigt
+* 4.1  Klant heeft niet genoeg saldo DR
+* 4.1a Use case eindigt
+
+link:domeinregels.adoc[Domeinregels]
+
+
+== Representatieve scenario's
+
+=== SC-GOI-A001
+
+Maarten wilt 20 EUR overschrijven en gaat naar de bank. Maarten geeft zijn iD aan de Medewerker. De medewerker controlleerd het ID. Maarten geeft het rekeningnummer van de ontvanger aan de Medewerker en kiest het gewenste bedrag. Maarten ondertekent de bevestiging. Medewerker vraagt aan Maarten of hij/zij een ticket wilt. Use case eindigt.
+
+=== SC-GOI-A002
+
+Maarten wilt 20 EUR overschrijven en gaat naar de bank. Maarten geeft zijn iD aan de Medewerker. Medewerker controlleerd het ID. Het ID is niet geldig. Use case eindigt.
+
+=== SC-GOI-A003
+
+Maarten wilt 20 EUR overschrijven en gaat naar de bank. Maarten geeft zijn iD aan de Medewerker. Medewerker controlleerd het ID. Maarten geeft het rekeningnummer van de ontvanger. Rekeningnummer is niet geldig. Use case eindigt.
+
+=== SC-GOI-A004
+
+Maarten wilt 20 EUR overschrijven en gaat naar de bank. Maarten geeft zijn iD aan de Medewerker. Medewerker controlleerd het ID. Maarten geeft het rekeningnummer van de ontvanger aan de Medewerker en kiest het gewenste bedrag. Maarten heeft niet genoeg saldo. Use case eindigt.

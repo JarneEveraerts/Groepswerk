@@ -1,0 +1,119 @@
+=== 1.1 Entiteitsklasse Klant 
+
+Dit is een klasse voor de persoon te kunnen identificeren.
+
+==== 1.1.1 attribuut Rijksregisternummer
+
+Dit is het rijksregisternummer van de klant.
+
+Tekst, verplicht, uniek.
+
+==== 1.1.2 attribuut postcode
+
+Dit is het postcode gedeelte van de woonplaats van deze klant.
+
+Tekst, verplicht, niet uniek
+
+==== 1.1.3 attribuut Naam
+
+Dit bevat de naam van de klant
+
+Tekst, verplicht, niet uniek
+
+==== 1.1.4 attribuut Geboortedatum
+
+Dit bevat de geboortedatum van de klant
+
+Datum, verplicht, niet uniek
+
+=== 1.2 Relatie : Klant "heeft" Zichtrekening (1-N)
+
+De klant "heeft" een zichtrekening.
+
+Elke klant (rol : eigenaar) heeft minstens 1 zichtrekening maar kan er meerdere hebben.
+
+Elke zichtrekening (rol : zichtrekening) heeft precies 1 klant als eigenaar.
+
+
+
+=== 2.1 Entiteitsklasse Zichtrekening 
+
+De klant kan een zichtrekening openen.
+
+==== 2.1.1 attribuut Rekeningnummer
+
+Dit bevat het rekeningnummer van de zichtrekening.
+
+nummeriek, verplicht, uniek
+
+==== 2.1.2 attribuut eigenaar
+
+Dit bevat de eigenaar van de zichtrekening
+
+tekst, verplicht, uniek
+
+=== 2.2 Relatie : Zichtrekening "behoort tot" Klant (N-N)
+
+De zichtrekening "behoort tot" een of meeredere Klanten
+
+Elke zichtrekening (rol : zichtrekening) heeft 1 of meerdere Klanten.
+
+Elke Klant (rol : eigenaar) heeft minstens 1 zichtrekening maar kan er meerdere hebben.
+
+
+
+=== 3.1 Entiteitsklasse Afhaling Geld
+
+Deze klasse beschrijft het geld afhalen.
+
+==== 3.1.1 attribuut Zichtrekening
+
+Dit bevat het rekeningnummer van de zichtrekening.
+
+nummeriek, verplicht, uniek
+
+==== 3.1.2 attribuut Klant
+
+Dit bevat de eigenaar van de zichtrekening
+
+tekst, verplicht, uniek
+
+=== 4.1 Entiteitklasse Spaarrekening openen
+
+De klant kan een spaarrekening openen.
+
+==== 4.1.1 attribuut Rekeningnummer
+
+Dit bevat het rekeningnummer van de zichtrekening.
+
+nummeriek, verplicht, uniek
+
+==== 4.1.2 attribuut eigenaar
+
+Dit bevat de eigenaar van de spaarrekening
+
+tekst, verplicht, uniek
+
+=== 4.2 Relatie : spaarrekening "behoort tot" Klant (N-N)
+
+De spaarrekening "behoort tot" een Klant
+
+Elke spaarrekening (rol : spaarrekening) kan meerdere dan 1 Klant hebben.
+
+Elke Klant (rol : eigenaar) heeft minstens 1 spaarrekening maar kan er meerdere hebben.
+
+=== 5.1 entiteisklasse Geld overschrijven intern
+
+De klant kan intern geld overschrijven.
+
+==== 5.1.1 attribuut geld overschrijven intern
+
+Dit bevat het rekeningnummer van de rekening.
+
+nummeriek, verplicht, uniek
+
+==== 5.1.2 attribuut Klant
+
+Dit bevat de eigenaar van de rekening
+
+tekst, verplicht, uniek
