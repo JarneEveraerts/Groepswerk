@@ -1,0 +1,186 @@
+= Analyse - Projectweek 08
+Yanic Inghelbrecht
+v2021.12.20.23.59
+// toc and section numbering
+:toc: preamble
+:toclevels: 4
+:sectnums: 
+:sectlinks:
+:sectnumlevels: 4
+// source code formatting
+:prewrap!:
+:source-highlighter: rouge
+:source-language: csharp
+:rouge-style: github
+:rouge-css: class
+// inject css for highlights using docinfo
+:docinfodir: ../common
+:docinfo: shared-head
+// folders
+:imagesdir: images
+:url-verdieping: ../{docname}-verdieping/{docname}-verdieping.adoc
+// experimental voor kdb: en btn: macro's van AsciiDoctor
+:experimental:
+
+//preamble
+[.text-right]
+versie {revnumber}
+
+
+== Taken
+
+Hieronder staan groepsopdrachten en evt. ook individuele opdrachten. Jullie mogen elkaar helpen en elkaar uitleg en hints geven, zolang je maar niet simpelweg elkaars bestanden overkopieert natuurlijk.
+
+Deze week doen we verder aan het "Vreemde Service Bank" (VSB) project, jullie gaan hier meerdere weken aan werken.
+
+[TIP]
+====
+Zorg dat je nauwgezet alle instructies volgt, ook dat maakt deel uit van jullie evaluatie.
+====
+
+=== De juiste folderstructuur voor het vervolg van het groepswerk
+
+De instructies hieronder zijn enkel bedoeld voor de groepsopdrachten, de oplossingen van de individuele opdrachten bewaar je ergens anders op je schijf!
+
+Voeg een nieuwe folder `projectweek-08` toe aan je `project-vsb` folder, daarin komen de bestanden voor deze week terecht.
+
+Het startpunt voor deze week is jullie oplossing van vorige week, dus deze kun je alvast overnemen.
+
+
+=== Werkverdeling
+
+Jullie groepje moet voor de **volgende projectweek** een eindverantwoordelijke aanduiden, doe dit nu. 
+
+Voor **deze projectweek** hadden jullie vorige keer al een eindverantwoordelijke aangeduid, toch? ;)
+
+
+=== Feedback op het ingediende groepswerk van vorige week
+
+De docent komt deze week in jullie groep langs om feedback te geven op het groepswerk van vorige week. 
+
+**Iedereen moet aanwezig zijn tijdens deze feedback.** Dus zowel het groepje dat de besproken oplossing vorige week indiende alsook het groepje dat deze week met deze oplossing aan de slag moet.
+
+Je zult bij het verder uitwerken van het project, rekening moeten houden met de feedback die je kreeg. Denk eraan, als analist moet je duidelijk communiceren, open kwesties goed opvolgen en nauwkeurig omgaan met informatie. 
+
+Als je meermaals dezelfde fouten maakt omdat je de feedback niet goed hebt aangewend, dan loopt er jullie groep iets mis qua communicatie.
+
+De verantwoordelijke van vorige week (die de oplossing heeft ingediend) moet de feedback noteren en doorspelen aan de verantwoordelijk van deze week.
+
+De verantwoordelijke van deze week (die met de ingediende oplossing aan de slag moet) moet zelf ook feedback noteren zodat jullie groepje er straks mee aan de slag kan.
+
+Elke verantwoordelijke stopt z'n feedback in een document met naam `feedback over pw07 groep c06.adoc`, waarbij je c06 vervangt door je eigen groepscode.
+
+Deze beide verantwoordelijken wisselen hun feedback uit op het einde van de feedbacksessie, dan is de kans groter dat er niks werd vergeten.
+
+De verantwoordelijken spelen de feedback door aan alle andere groepsleden zodat zij erop kunnen terugvallen bij hun deel van het werk.
+
+**Deze beide feedback documenten worden mee ingediend!**
+
+
+=== Opdracht 1 (in groep)
+
+Deze week worden de BUCs HERWERKT (**incl. scenario's en domeinregels**) op basis van de feedback die je kreeg.
+
+We bespreken deze keer de volgende taken :
+
+* Rekening Openen (met scenario's)
+* Geld overschrijven Intern (met scenario's)
+* Geld overschrijven Extern (met scenario's)
+
+Denk eraan dat je de overige use cases misschien ook zult moeten aanpassen, soms is een deel van de feedback ook van toepassing op use cases die niet werden besproken!
+
+
+=== Opdracht 2 (in groep)
+
+Tot nu toe bevat jullie BUCM twee aparte use cases bevat voor het openen van een rekening, nl. "Spaarrekening openen" (BUC-SO) en "Zichtrekening openen" (BUC-ZO).
+
+Deze week zul je deze moeten samenvoegen tot één enkele use case **"Rekening Openen" (BUC-RO)**. Dit kan op twee verschillende manieren, overloop in groep de voor- en nadelen van beide manieren en maak een keuze.
+
+Voeg een nieuw document toe in de `/bucm` folder met naam `buc-ro.adoc`, waarin je de inhoud combineert van `buc-so.adoc` en `buc-zo.adoc`.
+
+Na afloop verwijder je de `buc-so.adoc` en `buc-zo.adoc` documenten uit de `/bucm` folder, die zijn nu immers niet meer nodig.
+
+
+=== Opdracht 3 (in groep)
+
+Herwerk jullie domain data model (DDM) op basis van de feedback die je kreeg.
+
+Vorige week hebben jullie je DDM gebaseerd op :
+
+* Klant identificeren
+* Zichtrekening openen (*)
+* Geld afhalen
+* Spaarrekening openen (*)
+* Geld Overschrijven Intern
+* Klant Registreren
+
+(*) deze beide werden deze week samengevoegd, maar dat zal voor het domain data model normaliter geen verschil uitmaken.
+
+Deze week voegen we daar deze taak aan toe :
+
+* Geld Overschrijven Extern
+
+Je zult hiervoor het document `ddm/erm.adoc` moeten bewerken.
+
+Jullie domain data model zal dan alle gegevens kunnen beschrijven die nodig zijn bij deze 7 taken.
+
+Kijk dus naar de representatieve scenario's van de overeenkomstige BUC's en de data in jullie __domain sample__. Jullie domain data model moet immers ook deze data kunnen beschrijven!
+
+Beperk je tot de data die nodig is bij de zeven gevraagde taken.
+
+
+=== Opdracht 4 (in groep)
+
+Herwerk **met Visual Paradigm** het ERD dat een overzicht geeft van jullie Domain Data Model (DDM).
+
+Hou hierbij rekening met de feedback die je kreeg op het ERD van de vorige keer. Let op, het DDM is deze week gegroeid dus de nieuwe zaken zul je ook een plek op het diagram moeten geven.
+
+Exporteer dit diagram vanuit Visual Paradigm naar een `.png` afbeelding die met een gewone __image viewer__ kan bekeken worden (voor uitleg hierover, zie vorige week).
+
+Noem deze afbeelding `erd-overzicht.png` en plaats ze in de `/ddm` folder.
+
+
+=== Verslag
+
+De eindverantwoordelijke zal weerom het `verslag groep c06.adoc` document moeten opstellen en invullen voor deze week. Denk eraan dat je voor deze week een sectie moet *toevoegen* en de secties van de vorige weken in het document blijven staan.
+
+De ganse groep zal ook samen de finale versie overlopen van alle documenten alvorens ze in te dienen.
+
+Het verslag van de andere groep dien je niet mee in en je combineert ze ook niet samen in hetzelfde verslag!
+
+
+== Indienen
+
+De eindverantwoordelijke overloopt met de groep nog eens de inhoud van de volgende files in de projectweek folder :
+
+* `feedback over pw07 groep c05.adoc` (feedback document van de ene groep)
+* `feedback over pw07 groep c06.adoc` (feedback document van de andere groep)
+* `verslag groep c06.adoc` (waarbij je c06 vervangt door je eigen groep code)
+* `definitieve vragen en antwoorden.adoc`
+* `ddm/domain-sample.adoc`
+* `ddm/erm.adoc` (herwerkt)
+* `ddm/erd-overzicht.png` (herwerkt)
+* `bucm/buc-ki.adoc`
+* `bucm/buc-kr.adoc`
+* `bucm/buc-goi.adoc` 
+* `bucm/buc-goe.adoc`
+* `bucm/buc-gs.adoc` 
+* `bucm/buc-ga.adoc` 
+* `bucm/buc-ro.adoc` (nieuw, vervangt `bucm/buc-zo.adoc` en `bucm/buc-so.adoc`)
+* `bucm/domeinregels.adoc`
+
+Deze file stop je vervolgens in een zip bestand met naam `groep c06 projectweek-08.zip` (waarbij je c06 vervangt door je eigen groep code).
+
+
+[IMPORTANT]
+====
+Als ik jullie zip file opendoe, wil ik enkel de `projectweek-08` folder zien, geen andere files!
+
+Die andere files zitten immers *_in_* die `projectweek-08` folder in je zip file.
+
+Ik wil ook geen `__MACOSX` of `.DS_Store` drolletjes tegenkomen in de zip file.
+====
+
+Deze zip file wordt ingediend op Chamilo, ten laatste de dag VOOR de volgende feedback sessie (de volgende feedbacksessie is normaliter op dezelfde dag volgende week). 
+
+Is jullie volgende feedbacksessie bv. volgende week woensdag, dan moet je oplossing ten laatste volgende week dinsdag op Chamilo ingediend worden.
