@@ -1,0 +1,78 @@
+
+= Verslag Groep
+:toc:
+
+== *8:30 - 13:00 28/10/2021*
+=== *Jason*
+De student heeft vragen getypt en heeft vocale input gegeve tijdens de andere opdrachten
+
+=== *Jonas*
+De student heeft de scenario's geschreven. En was wettig afwezig op 28/10 vanaf 11u10.
+
+=== *Jarne*
+De student heeft BUC-RO getypt en heeft vocale input gegeven tijdens de andere opdrachten.
+
+== *8:30 - 13:00 18/11/2021*
+
+=== *Jason*
+jason heeft half werk geleverd door in de vraag en antwoord taak alleen vragen er in te zetten
+
+=== *Jonas*
+De student heeft de scenario's geschreven
+
+=== *Jarne*
+BUC herwerkt
+
+== *25/12/2021*
+=== *Jason*
+De student heeft zijn deel van het project niet ingediend (opdracht 1,4) en heeft dus niets gedaan.
+
+=== *Jonas*
+De student heeft BUC-RO, BUC-GS, BUC-GA herwerkt en BUC-KI toegevoegd (Opdracht 2) en Domain-Sample (opdracht 5) gemaakt.
+Verslag geschreven.
+
+=== *Jarne*
+De student heeft buc-goi getypt.
+
+== *02/12/2021*
+=== *Jason*
+De student heeft zijn deel van projectweek 4 dat niet ingediend was (opdracht 1,4) ingehaalt.
+En heeft voor projectweek 5 'vragen voor de opdrachtgever.adoc' (opdracht 1) en de BUC's (GS, GA, RO en GOI) herwerkt (Opdracht 2).
+
+=== *Jonas*
+De student heeft het bestand 'BUC-KR.adoc' gemaakt (Opdracht 3).
+Verslag geschreven.
+
+=== *Jarne*
+De student heeft het bestand 'erm.adoc' gemaakt.
+
+== *9/12/2021*
+=== *Jason*
+De student heeft de Domain data model (DDM) herwerkt. *(Opdracht 3)*
+
+=== *Jonas*
+De student heeft de representatieve scenario's geschreven voor Geld Overschtrijven Intern (BUC-GOI). *(Opdracht 2)*
+Verslag geschreven.
+
+=== *Jarne*
+De student heeft de BUC's herwerkt op basis van de feedback die we kregen. En heeft het ERD diagram gemaakt. *(Opdracht 1, 4)*
+
+== *16/12/2021*
+=== *Jason*
+De student heeft Opdracht 5 en 6 gemaakt
+
+=== *Jonas*
+De student heeft Opdracht 2 en 4 gemaakt
+Verslag geschreven.
+
+=== *Jarne*
+De student heeft Opdracht 1 en 3 gemaakt
+
+== *23/12/2021*
+=== *Jason*
+
+
+=== *Jonas*
+
+
+=== *Jarne*
