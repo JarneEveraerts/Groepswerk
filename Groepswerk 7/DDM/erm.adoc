@@ -117,3 +117,15 @@ nummeriek, verplicht, uniek
 Dit bevat de eigenaar van de rekening
 
 tekst, verplicht, uniek
+
+=== 6.1 entiteitsklasse Registreren klant
+
+Dit bevat de informatie van de klant zowel als zijn rekeningnummer.
+
+tekst, numeriek, verplicht, uniek
+
+==== 6.1.1 attribuut klant
+
+Dit bevat de eigenaar van de rekening.
+
+tekst, verplicht, uniek
