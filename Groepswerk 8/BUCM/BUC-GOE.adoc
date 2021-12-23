@@ -1,0 +1,65 @@
+== BUC-GOE Geld OVerschrijveen Extern
+
+=== Actoren
+
+* Klant en medewerker
+
+=== Precondities 
+
+* Een VSB-rekening hebben
+
+=== Basis pad 
+
+. Klant wenst geld over te schrijven naar een externe rekening
+. Klant geeft ID en bankkaart aan medewerker
+. Klant geeft rekeningnummer van de ontvanger
+. Klant geeft gewenste bedrag in om over te schrijven
+. Medewerker voert alle controles uit
+. Medewerker registreerd de transactie en geeft een datapakket aan het IBS
+. Klant ondertekent de bevestiging
+. Medewerker schrijft het gewenste bedrag over
+. Klant kiest of hij/zij een ticket wilt
+. Klant neemt bankkaart terug
+
+=== Postcondities
+
+* Succesvol geld overgeschreven naar een externe rekening
+
+=== Alternatieve paden
+
+* Geen geldig ID
+* Foutief rekeningnummer
+* Klant heeft niet genoeg saldo
+
+link:domeinregels.adoc[Domeinregels]
+
+
+== Representatieve scenario's
+
+=== SC-GOE-A001 - Succesvol Geld Overschrijven Extern
+
+Maarten wilt 20 EUR overschrijven naar een externe rekening en gaat naar de bank. Maarten geeft zijn iD en bankkaart aan de Medewerker.
+De medewerker controlleerd het ID. Maarten geeft het rekeningnummer van de ontvanger aan de Medewerker en kiest het gewenste bedrag.
+De medewerker voert alle controles uit en registreerd de transactie en geeft een datapakket aan het IBS.
+Maarten ondertekent de bevestiging. Medewerker vraagt aan Maarten of hij/zij een ticket wilt. Use case eindigt.
+
+=== SC-GOE-A002 - Ongeldig ID
+
+Maarten wilt 20 EUR overschrijven en gaat naar de bank.
+Maarten geeft zijn iD aan de Medewerker.
+Medewerker controlleerd het ID. Het ID is niet geldig.
+Use case eindigt.
+
+=== SC-GOE-A003 - Foutief Rekeningnummer
+
+Maarten wilt 20 EUR overschrijven en gaat naar de bank. Maarten geeft zijn iD aan de Medewerker.
+De Medewerker controlleerd het ID. Maarten geeft het rekeningnummer van de ontvanger.
+De Medewerker voert de controlles uit en mekt dat het rekeningnummer niet geldig is.
+Use case eindigt.
+
+=== SC-GOE-A004 - Saldo ontoereikend
+
+Maarten wilt 20 EUR overschrijven naar een externe rekening en gaat naar de bank. Maarten geeft zijn iD en bankkaart aan de Medewerker.
+De medewerker controlleerd het ID. Maarten geeft het rekeningnummer van de ontvanger aan de Medewerker en kiest het gewenste bedrag.
+De medewerker voert alle controles uit en merkt op dat Maarten niet genoeg saldo heeft op zijn rekening.
+Use case eindigt.

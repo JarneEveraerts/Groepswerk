@@ -1,0 +1,28 @@
+:toc: auto
+
+== *Domeinregels met betrekking tot stortingen*
+
+=== DR_S - Storting is correct
+De storting is correct indien het geld niet beschadigd is en het de correcte valuta is.
+
+=== DR_SVG - Storting vals geld
+Indien er vals geld wordt gestord zal de bank dit in beslag nemen en wordt het biljet gecontroleerd door de nationale bank.
+
+=== DR_SC - Stortingscontrole
+Elke storting wordt gecontroleerd op vreemde objecten.
+
+=== DR_P - Pincode
+Een pincode kan max 3 maal verkeerd ingegeven worden. na dit zal de bankkaard geblokkeerd worden
+
+== *Domeinregels met betrekking tot opvraging*
+
+=== DR_OS - Opvragen saldo
+Een opvraging kan pas gebeuren indien het saldo toerijkbaar is
+
+=== DR_P - Pincode
+Een pincode kan max 3 maal verkeerd ingegeven worden. na dit zal de bankkaard geblokkeerd worden
+
+== *Domeinregels met betrekking tot rekening openen*
+
+=== DR_I - Identificatie
+een id-kaart moet voldoen aan nationale richtlijnen
